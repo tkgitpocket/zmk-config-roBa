@@ -98,7 +98,7 @@
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <12>;
+        steps = <24>; // 12→24に変更 ref: https://qiita.com/Reotech/items/e048073b3c5831d3e1c2
         status = "disabled";
     };
 
