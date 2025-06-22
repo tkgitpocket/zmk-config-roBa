@@ -6,11 +6,13 @@
 // ロータリーエンコーダにマウススクロールを割り当てる
 //   ref: https://zenn.dev/nya3_neko2/scraps/4149ad6f41a584
 //   ref: https://qiita.com/Reotech/items/e048073b3c5831d3e1c2
+
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 100 // マウススクロール量定義
 
 // 【ZMK】OS設定を日本語キーボードのまま使う
 //    ref: https://note.com/kloir_z/n/n314e739f03a1
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
 #define JP_QUOTE        AMPERSAND         // '
@@ -34,7 +36,6 @@
 #define JP_KANA         LANGUAGE_1        // かな
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
-
 
 &mt {
     flavor = "balanced";
@@ -91,29 +92,32 @@
         };
 
         // 新しいスクロール動作の追加
+
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             // 追加: スクロールのタップ時間を設定 (20ms)
+
             tap-ms = <20>;
         };
     };
-
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                          &kp T                                                        &kp Y        &kp U  &lt 5 I   &kp O     &kp P
-&mt LCTRL A       &kp S         &kp D         &kp F                          &kp G        &kp LS(LG(S))                    &kp COMMA      &kp H        &kp J  &kp K     &kp L     &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                          &kp B        &kp COLON                        &kp PERIOD     &kp N        &kp M  &mkp MB1  &mkp MB2  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_MUHENKAN  &lt 4 SPACE  &lt_to_layer_0 3 INT_HENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
+&kp Q             &kp W    &kp E         &kp R                          &kp T                                                        &kp Y        &kp U  &lt 5 I   &kp O     &kp P
+&mt LCTRL A       &kp S    &kp D         &kp F                          &kp G        &kp LS(LG(S))                    &kp COMMA      &kp H        &kp J  &kp K     &kp L     &kp MINUS
+&mt LEFT_SHIFT Z  &kp X    &kp C         &kp V                          &kp B        &kp COLON                        &kp PERIOD     &kp N        &kp M  &mkp MB1  &mkp MB2  &kp NON_US_BSLH
+&kp LCTRL         &kp TAB  &kp LEFT_ALT  &lt_to_layer_0 6 INT_MUHENKAN  &lt 4 SPACE  &lt_to_layer_0 3 INT_HENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp SLASH
             >;
 
             // sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>; // デフォルト
+
             sensor-bindings = <&scroll_up_down>; // ロータリーエンコーダをマウススクロールにする
         };
 
