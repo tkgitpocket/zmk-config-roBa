@@ -120,10 +120,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W    &kp E         &kp R                          &kp T                                                                         &kp Y        &kp U  &lt 5 I   &kp O     &kp P
-&mt LCTRL A       &kp S    &kp D         &kp F                          &kp G                   &kp LS(LG(S))                    &kp COMMA            &kp H        &kp J  &kp K     &kp L     &lt_to_layer_0 5 MINUS
-&mt LEFT_SHIFT Z  &kp X    &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp PERIOD           &kp N        &kp M  &mkp MB1  &mkp MB2  &kp BACKSLASH
-&kp LCTRL         &kp TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                             &kp SLASH
+&kp Q               &kp W    &kp E         &kp R                          &kp T                                                                         &kp Y        &kp U  &lt 5 I   &kp O     &kp P
+&mt LCTRL A         &kp S    &kp D         &kp F                          &kp G                   &kp LS(LG(S))                    &kp COMMA            &kp H        &kp J  &kp K     &kp L     &lt_to_layer_0 5 MINUS
+&mt LEFT_SHIFT Z    &kp X    &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp PERIOD           &kp N        &kp M  &mkp MB1  &mkp MB2  &kp BACKSLASH
+&mt LEFT_SHIFT ESC  &kp TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                             &kp SLASH
             >;
 
             // sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>; // デフォルト
@@ -133,10 +133,10 @@
 
         symbol {
             bindings = <
-&kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH      &kp DOLLAR              &kp PERCENT                                                 &kp AMPERSAND  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
-&kp LCTRL        &kp SEMICOLON      &kp COLON     &kp LEFT_BRACE          &kp RIGHT_BRACE  &trans                &kp COMMA            &kp CARET      &kp AT_SIGN       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
-&kp TAB          &kp PLUS           &kp ASTERISK  &kp TILDE               &kp PRINTSCREEN  &trans                &kp PERIOD           &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp UNDERSCORE
-&kp ESC          &kp LEFT_WIN       &kp LEFT_ALT  &mt LCTRL INT_MUHENKAN  &kp SPACE        &kp INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                                                     &kp QUESTION
+&kp EXCLAMATION     &kp DOUBLE_QUOTES  &kp HASH      &kp DOLLAR              &kp PERCENT                                                 &kp AMPERSAND  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
+&kp LCTRL           &kp SEMICOLON      &kp COLON     &kp LEFT_BRACE          &kp RIGHT_BRACE  &trans                &kp COMMA            &kp CARET      &kp AT_SIGN       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
+&kp TAB             &kp PLUS           &kp ASTERISK  &kp TILDE               &kp PRINTSCREEN  &trans                &kp PERIOD           &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp UNDERSCORE
+&mt LEFT_SHIFT ESC  &kp LEFT_WIN       &kp LEFT_ALT  &mt LCTRL INT_MUHENKAN  &kp SPACE        &kp INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                                                     &kp QUESTION
             >;
         };
 
