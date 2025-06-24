@@ -142,7 +142,7 @@
 
         mouse_ctrl {
             bindings = <
-&kp TAB               &kp LEFT_ALT  &kp END       &none             &kp ESC                                                     &kp LC(Y)       &mkp MB4   &mkp MCLK  &mkp MB5   &kp UP_ARROW
+&kp TAB               &kp LEFT_ALT  &kp END       &to 6             &kp ESC                                                     &kp LC(Y)       &mkp MB4   &mkp MCLK  &mkp MB5   &kp UP_ARROW
 &mt LCTRL HOME        &kp LC(S)     &kp DEL       &kp RIGHT_ARROW   &kp LEFT_SHIFT  &kp LC(LA(KP_NUMBER_0))      &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &none      &mkp RCLK  &lt_to_layer_0 5 MINUS
 &mt LEFT_SHIFT LC(Z)  &kp LC(X)     &kp LC(C)     &kp LC(V)         &kp LEFT_ARROW  &kp EQUAL                    &kp PAGE_DOWN  &kp DOWN_ARROW  &none      &mkp LCLK  &mkp RCLK  &kp ENTER
 &mt LEFT_SHIFT ESC    &kp LWIN      &kp LEFT_ALT  &kp INT_MUHENKAN  &kp SPACE       &kp INT_MUHENKAN             &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
@@ -162,8 +162,8 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB4  &mkp MB3  &mkp MB5  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans    &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
