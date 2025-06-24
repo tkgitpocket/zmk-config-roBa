@@ -133,7 +133,7 @@
 
         symbol {
             bindings = <
-&kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH      &kp DOLLAR              &kp PERCENT                                                 &kp AMPERSAND  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp NON_US_BACKSLASH
+&kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH      &kp DOLLAR              &kp PERCENT                                                 &kp AMPERSAND  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
 &kp LCTRL        &kp SEMICOLON      &kp COLON     &kp LEFT_BRACE          &kp RIGHT_BRACE  &trans                &kp COMMA            &kp CARET      &kp AT_SIGN       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
 &kp TAB          &kp PLUS           &kp ASTERISK  &kp TILDE               &kp PRINTSCREEN  &trans                &kp PERIOD           &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp UNDERSCORE
 &kp ESC          &kp LEFT_WIN       &kp LEFT_ALT  &mt LCTRL INT_MUHENKAN  &kp SPACE        &kp INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                                                     &kp QUESTION
@@ -145,7 +145,7 @@
 &kp TAB               &kp LEFT_ALT  &kp END       &none             &kp ESC                                                     &kp LC(Y)       &mkp MB4   &mkp MCLK  &mkp MB5   &kp UP_ARROW
 &mt LCTRL HOME        &kp LC(S)     &kp DEL       &kp RIGHT_ARROW   &kp LEFT_SHIFT  &kp LC(LA(KP_NUMBER_0))      &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &none      &mkp RCLK  &lt_to_layer_0 5 MINUS
 &mt LEFT_SHIFT LC(Z)  &kp LC(X)     &kp LC(C)     &kp LC(V)         &kp LEFT_ARROW  &kp EQUAL                    &kp PAGE_DOWN  &kp DOWN_ARROW  &none      &mkp LCLK  &mkp RCLK  &kp ENTER
-&mt LEFT_SHIFT ESC    &kp LWIN      &kp LEFT_ALT  &kp INT_MUHENKAN  &kp SPACE       &kp INT_MUHENKAN             &kp RCTRL      &kp ENTER                                        &kp QUESTION
+&mt LEFT_SHIFT ESC    &kp LWIN      &kp LEFT_ALT  &kp INT_MUHENKAN  &kp SPACE       &kp INT_MUHENKAN             &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
             >;
         };
 
