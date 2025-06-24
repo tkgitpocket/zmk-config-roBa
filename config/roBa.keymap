@@ -122,7 +122,7 @@
             bindings = <
 &kp Q             &kp W    &kp E         &kp R                          &kp T                                                                         &kp Y        &kp U  &lt 5 I   &kp O     &kp P
 &mt LCTRL A       &kp S    &kp D         &kp F                          &kp G                   &kp LS(LG(S))                    &kp COMMA            &kp H        &kp J  &kp K     &kp L     &lt_to_layer_0 5 MINUS
-&mt LEFT_SHIFT Z  &kp X    &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp PERIOD           &kp N        &kp M  &mkp MB1  &mkp MB2  &kp NON_US_BSLH
+&mt LEFT_SHIFT Z  &kp X    &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp PERIOD           &kp N        &kp M  &mkp MB1  &mkp MB2  &kp BACKSLASH
 &kp LCTRL         &kp TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                             &kp SLASH
             >;
 
