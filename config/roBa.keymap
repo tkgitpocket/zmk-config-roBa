@@ -140,10 +140,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W    &kp E         &kp R                          &kp T                                                                         &kp Y        &kp U  &lt 5 I    &kp O       &kp P
-&mt LCTRL A         &kp S    &kp D         &kp F                          &kp G                   &kp LS(LG(S))                    &kp EQUAL            &kp H        &kp J  &kp K      &kp L       &lt_to_layer_0 5 MINUS
-&mt LEFT_SHIFT Z    &kp X    &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp UNDERSCORE       &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp BACKSLASH
-&mt LEFT_SHIFT ESC  &kp TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                                &kp SLASH
+&kp Q               &kp W            &kp E         &kp R                          &kp T                                                                         &kp Y        &kp U  &lt 5 I    &kp O       &kp P
+&mt LCTRL A         &kp S            &kp D         &kp F                          &kp G                   &kp LS(LG(S))                    &kp EQUAL            &kp H        &kp J  &kp K      &kp L       &lt_to_layer_0 5 MINUS
+&mt LEFT_SHIFT Z    &kp X            &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp UNDERSCORE       &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp BACKSLASH
+&mt LEFT_SHIFT ESC  &mt LG(TAB) TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                                &kp SLASH
             >;
 
             // sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>; // デフォルト
@@ -203,7 +203,7 @@
 &trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans        &trans        &to 0         &to 0   &to 0       &to 0        &to 0                                                   &bt BT_CLR_ALL
             >;
         };
     };
