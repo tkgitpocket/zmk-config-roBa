@@ -80,6 +80,26 @@
             bindings = <&mkp MB5>;
             key-positions = <7 8>;
         };
+
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <18 19>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <19 20>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <30 31>;
+        };
+
+        asterisk {
+            bindings = <&kp ASTERISK>;
+            key-positions = <31 32>;
+        };
     };
 
     macros {
@@ -120,10 +140,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W    &kp E         &kp R                          &kp T                                                                         &kp Y        &kp U  &lt 5 I   &kp O     &kp P
-&mt LCTRL A         &kp S    &kp D         &kp F                          &kp G                   &kp LS(LG(S))                    &kp COMMA            &kp H        &kp J  &kp K     &kp L     &lt_to_layer_0 5 MINUS
-&mt LEFT_SHIFT Z    &kp X    &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp PERIOD           &kp N        &kp M  &mkp MB1  &mkp MB2  &kp BACKSLASH
-&mt LEFT_SHIFT ESC  &kp TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                             &kp SLASH
+&kp Q               &kp W    &kp E         &kp R                          &kp T                                                                         &kp Y        &kp U  &lt 5 I    &kp O       &kp P
+&mt LCTRL A         &kp S    &kp D         &kp F                          &kp G                   &kp LS(LG(S))                    &kp EQUAL            &kp H        &kp J  &kp K      &kp L       &lt_to_layer_0 5 MINUS
+&mt LEFT_SHIFT Z    &kp X    &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp UNDERSCORE       &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp BACKSLASH
+&mt LEFT_SHIFT ESC  &kp TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                                &kp SLASH
             >;
 
             // sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>; // デフォルト
@@ -163,7 +183,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB4  &mkp MB3  &mkp MB5  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans    &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB1  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
