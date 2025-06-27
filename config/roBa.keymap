@@ -42,6 +42,27 @@
     quick-tap-ms = <0>;
 };
 
+
+// オートマウスレイヤー関連
+&zip_temp_layer {
+    // 以下のキー以外を押すとAML解除
+    excluded-positions = <
+         6 // U
+         7 // I
+         8 // O
+        10 // A
+        22 // Z
+        18 // J
+        19 // K
+        20 // L
+        21 // ;
+        34 // Ctrl
+        40 // Backspace
+        41 // Enter
+    >;
+    require-prior-idle-ms = <200>; // キー入力からこの時間はAMLを発動させない
+};
+
 / {
     combos {
         compatible = "zmk,combos";
