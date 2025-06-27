@@ -63,6 +63,22 @@
     require-prior-idle-ms = <200>; // キー入力からこの時間はAMLを発動させない
 };
 
+
+&mkp_input_listener { input-processors = <&zip_temp_layer 4 10000>; };
+
+&trackball { cpi = <800>; };
+
+&trackball_listener {
+    compatible = "zmk,input-listener";
+
+    auto-mouse-layer {
+        layers = <0 4>;
+        input-processors = <&zip_temp_layer 4 10000>;
+        process-next;
+    };
+
+};
+
 / {
     combos {
         compatible = "zmk,combos";
