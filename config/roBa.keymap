@@ -7,7 +7,7 @@
 //   ref: https://zenn.dev/nya3_neko2/scraps/4149ad6f41a584
 //   ref: https://qiita.com/Reotech/items/e048073b3c5831d3e1c2
 
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100 // マウススクロール量定義
+#define ZMK_MOUSE_POINTING_SCRL_VAL 100 // マウススクロール量定義
 
 // 【ZMK】OS設定を日本語キーボードのまま使う
 //    ref: https://note.com/kloir_z/n/n314e739f03a1
@@ -125,7 +125,6 @@
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
