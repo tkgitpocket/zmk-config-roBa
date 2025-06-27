@@ -112,7 +112,7 @@
 
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
         // Shift+クリックの動作改善のマクロ定義
-
+/*
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -130,6 +130,7 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
         };
+*/
     };
 
     behaviors {
@@ -156,7 +157,7 @@
 
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
         // Shift+クリックの動作改善のbehavior定義
-
+/*
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -174,6 +175,7 @@
             flavor = "balanced";
             quick-tap-ms = <200>;
         };
+*/
     };
 
     keymap {
