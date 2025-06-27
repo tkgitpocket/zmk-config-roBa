@@ -13,9 +13,10 @@
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
 };
-/*
+
 // オートマウスレイヤー関連
 &zip_temp_layer {
+/*
     // 以下のキー以外を押すとAML解除
     excluded-positions = <
          6 // U
@@ -31,9 +32,10 @@
         40 // Backspace
         41 // Enter
     >;
+*/
     require-prior-idle-ms = <200>; // キー入力からこの時間はAMLを発動させない
 };
-*/
+
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
@@ -41,7 +43,7 @@
 
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer
         // Input Processorのオートマウスレイヤーを使う
-//        input-processors = <&zip_temp_layer 4 10000>; // トラボ検出後、10秒間レイヤー4を有効にする
+        input-processors = <&zip_temp_layer 4 10000>; // トラボ検出後、10秒間レイヤー4を有効にする
     };
 };
 
