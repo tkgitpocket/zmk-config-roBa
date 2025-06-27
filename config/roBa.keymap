@@ -109,6 +109,26 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
+        // Shift+クリックの動作改善のマクロ定義
+        exit_AML: exit_AML {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&tog_off MOUSE>;
+            label = "exit_AML";
+        };
+
+        kp_exit_AML: kp_exit_AML {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
+            label = "KP_exit_AML";
+        };
     };
 
     behaviors {
@@ -122,15 +142,32 @@
         };
 
         // 新しいスクロール動作の追加
-
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
             // 追加: スクロールのタップ時間を設定 (20ms)
-
             tap-ms = <20>;
+        };
+
+        // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
+        // Shift+クリックの動作改善のbehavior定義
+        tog_off: toggle_layer_off {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        };
+
+        mt_exit_AML_on_tap: mt_exit_AML_on_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_exit_AML_ON_TAP";
+            bindings = <&kp>, <&kp_exit_AML>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            quick-tap-ms = <200>;
         };
     };
 
