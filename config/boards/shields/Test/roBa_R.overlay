@@ -41,7 +41,7 @@
 
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer
         // Input Processorのオートマウスレイヤーを使う
-        input-processors = <&zip_temp_layer 4 10000>; // トラボ検出後、10秒間レイヤー4を有効にする
+//        input-processors = <&zip_temp_layer 4 10000>; // トラボ検出後、10秒間レイヤー4を有効にする
     };
 };
 
