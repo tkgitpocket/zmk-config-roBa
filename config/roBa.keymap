@@ -100,11 +100,6 @@
             bindings = <&kp ASTERISK>;
             key-positions = <31 32>;
         };
-
-        z_esc {
-            bindings = <&none>;
-            key-positions = <34 22>;
-        };
     };
 
     macros {
