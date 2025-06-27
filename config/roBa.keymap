@@ -100,21 +100,6 @@
             bindings = <&kp ASTERISK>;
             key-positions = <31 32>;
         };
-
-        z_ctrl {
-            bindings = <&none>;
-            key-positions = <22 23>;
-        };
-
-        a_ctrl {
-            bindings = <&none>;
-            key-positions = <10 11>;
-        };
-
-        bs_enter {
-            bindings = <&none>;
-            key-positions = <40 41>;
-        };
     };
 
     macros {
