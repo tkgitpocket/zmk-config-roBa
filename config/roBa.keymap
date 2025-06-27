@@ -112,7 +112,7 @@
 
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
         // Shift+クリックの動作改善のマクロ定義
-/*
+        /*
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -157,7 +157,7 @@
 
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
         // Shift+クリックの動作改善のbehavior定義
-/*
+        /*
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -183,10 +183,10 @@
 
         default_layer {
             bindings = <
-&kp Q                               &kp W             &kp E         &kp R                          &kp T                                                                         &kp Y        &kp U  &kp I      &kp O       &kp P
-&mt_exit_AML_on_tap LCTRL A         &kp S             &kp D         &kp F                          &mt LEFT_SHIFT G        &kp LS(LG(S))                    &kp EQUAL            &kp H        &kp J  &kp K      &kp L       &lt_to_layer_0 5 MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z    &kp X             &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp UNDERSCORE       &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp BACKSLASH
-&mt_exit_AML_on_tap LEFT_SHIFT ESC  &mt LEFT_GUI TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                                &kp SLASH
+&kp Q               &kp W             &kp E         &kp R                          &kp T                                                                         &kp Y        &kp U  &kp I      &kp O       &kp P
+&mt LCTRL A         &kp S             &kp D         &kp F                          &mt LEFT_SHIFT G        &kp LS(LG(S))                    &kp EQUAL            &kp H        &kp J  &kp K      &kp L       &lt_to_layer_0 5 MINUS
+&mt LEFT_SHIFT Z    &kp X             &kp C         &kp V                          &kp B                   &kp ASTERISK                     &kp UNDERSCORE       &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp BACKSLASH
+&mt LEFT_SHIFT ESC  &mt LEFT_GUI TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                                &kp SLASH
             >;
 
             // sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>; // デフォルト
