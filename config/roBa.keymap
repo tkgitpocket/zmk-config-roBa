@@ -110,6 +110,11 @@
             bindings = <&none>;
             key-positions = <10 11>;
         };
+
+        bs_enter {
+            bindings = <&none>;
+            key-positions = <40 41>;
+        };
     };
 
     macros {
