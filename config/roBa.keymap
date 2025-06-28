@@ -57,7 +57,7 @@
 #define SCROLL	5
 
 &mt {
-    tapping-term-ms = <2200>; // ref: https://github.com/kot149/zmk-config-roBa
+    tapping-term-ms = <10200>; // ref: https://github.com/kot149/zmk-config-roBa
     quick-tap-ms = <250>; // ref: https://github.com/kot149/zmk-config-roBa
     flavor = "balanced";
 //    quick-tap-ms = <0>;
