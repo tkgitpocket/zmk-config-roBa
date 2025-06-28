@@ -65,6 +65,7 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <700>; // ref: https://github.com/kot149/zmk-config-roBa
+        evt-type = <INPUT_EV_REL>; // イベントタイプを指定
         //PMW3610ドライバのオートマウスレイヤーをOFFにする
 //        automouse-layer = <4>;
         scroll-layers = <5>;
