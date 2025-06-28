@@ -94,11 +94,21 @@
 
 &mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
 
-&trackball { cpi = <800>; };
+// トラックボールの設定はオーバーレイファイルで行うため、ここでは削除
+// &trackball { cpi = <800>; };
 
 &trackball_listener {
     compatible = "zmk,input-listener";
 
+    // 基本的なオートマウスレイヤー設定のみ有効化
+    auto-mouse-layer {
+        layers = <DEFAULT MOUSE>;
+        input-processors = <&zip_temp_layer MOUSE 10000>;
+        process-next;
+    };
+
+    // スクロール機能は一時的に無効化
+    /*
     scroller {
         layers = <SCROLL>;
         input-processors =
@@ -106,13 +116,7 @@
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
     };
-
-    auto-mouse-layer {
-        layers = <DEFAULT MOUSE>;
-        input-processors = <&zip_temp_layer MOUSE 10000>;
-        process-next;
-    };
-
+    */
 };
 // End ref: https://github.com/kot149/zmk-config-roBa
 
