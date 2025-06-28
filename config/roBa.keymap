@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#include <zephyr/dt-bindings/input/input-event-codes.h> // zip_temp_layer用に追加
+
 // ロータリーエンコーダにマウススクロールを割り当てる
 //   ref: https://zenn.dev/nya3_neko2/scraps/4149ad6f41a584
 //   ref: https://qiita.com/Reotech/items/e048073b3c5831d3e1c2
