@@ -111,4 +111,20 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
     };
+    
+    // ref: https://github.com/kot149/zmk-config-roBa
+        trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
+};
+
+// ref: https://github.com/kot149/zmk-config-roBa
+&spi0 {
+    status = "disabled";
+
+    trackball: trackball@0 {
+        status = "disabled";
+        reg = <0>;
+    };
 };
