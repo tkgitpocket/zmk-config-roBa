@@ -210,7 +210,6 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
         };
 
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
@@ -222,7 +221,6 @@
             tap-ms = <0>;
             #binding-cells = <0>;
             bindings = <&tog_off MOUSE>;
-            label = "exit_AML";
         };
 
         kp_exit_AML: kp_exit_AML {
@@ -231,7 +229,6 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
-            label = "KP_exit_AML";
         };
 */
     };
@@ -239,7 +236,6 @@
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;
@@ -268,7 +264,6 @@
 
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT_exit_AML_ON_TAP";
             bindings = <&kp>, <&kp_exit_AML>;
 
             #binding-cells = <2>;
