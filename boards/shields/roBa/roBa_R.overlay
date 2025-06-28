@@ -14,18 +14,6 @@
             ;
 };
 
-/ {
-    trackball_listener {
-        status = "okay"; // ref: https://github.com/kot149/zmk-config-roBa
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-
-        // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer
-        // Input Processorのオートマウスレイヤーを使う
-//        input-processors = <&zip_temp_layer 4 10000>; // トラボ検出後、10秒間レイヤー4を有効にする
-    };
-};
-
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -77,4 +65,10 @@
     };
 };
 
-
+/ {
+    trackball_listener {
+        status = "disabled";
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
+};
