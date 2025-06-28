@@ -50,6 +50,7 @@
 // レイヤーの定義
 #define DEFAULT 0
 #define MOUSE	4
+#define SCROLL	5
 
 &mt {
     tapping-term-ms = <200>; // ref: https://github.com/kot149/zmk-config-roBa
@@ -97,6 +98,14 @@
 
 &trackball_listener {
     compatible = "zmk,input-listener";
+
+    scroller {
+        layers = <SCROLL>;
+        input-processors =
+            <&zip_xy_scaler 2 3>,
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+            <&zip_xy_to_scroll_mapper>;
+    };
 
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
@@ -214,7 +223,6 @@
 
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
         // Shift+クリックの動作改善のマクロ定義
-        /*
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -230,7 +238,6 @@
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
         };
-*/
     };
 
     behaviors {
@@ -254,7 +261,6 @@
 
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
         // Shift+クリックの動作改善のbehavior定義
-        /*
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -271,7 +277,6 @@
             flavor = "balanced";
             quick-tap-ms = <200>;
         };
-*/
     };
 
     keymap {
