@@ -60,7 +60,8 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
+//        compatible = "pixart,pmw3610"; // ベンダープレフィクス pixart がダメらしい。デフォルトこれだったけど最新では指定できない？
+        compatible = "zmk,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -72,7 +73,7 @@
         // End ref: https://github.com/kot149/zmk-config-roBa
         //PMW3610ドライバのオートマウスレイヤーをOFFにする
 //        automouse-layer = <4>;
-// 新しいPMW3610では使えない        scroll-layers = <5>;
+        // 新しいPMW3610では使えない        scroll-layers = <5>;
     };
 };
 
