@@ -16,6 +16,7 @@
 
 / {
     trackball_listener {
+        status = "okay"; // ref: https://github.com/kot149/zmk-config-roBa
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
