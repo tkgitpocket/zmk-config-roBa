@@ -72,7 +72,7 @@
         // End ref: https://github.com/kot149/zmk-config-roBa
         //PMW3610ドライバのオートマウスレイヤーをOFFにする
 //        automouse-layer = <4>;
-        scroll-layers = <5>;
+// 新しいPMW3610では使えない        scroll-layers = <5>;
     };
 };
 
