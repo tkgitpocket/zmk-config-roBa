@@ -46,6 +46,9 @@
 
 &xiao_serial { status = "disabled"; };
 
+// ref: https://github.com/kot149/zmk-config-roBa
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
