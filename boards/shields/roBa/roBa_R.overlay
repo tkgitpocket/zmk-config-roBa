@@ -61,7 +61,7 @@
 
 / {
     trackball_listener {
-        status = "disabled";
+        status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
     };
