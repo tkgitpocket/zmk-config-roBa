@@ -97,6 +97,8 @@
 // トラックボールの設定はオーバーレイファイルで行うため、ここでは削除
 // &trackball { cpi = <800>; };
 
+// トラックボールリスナーを一時的に無効化
+/*
 &trackball_listener {
     compatible = "zmk,input-listener";
 
@@ -118,6 +120,7 @@
     };
     */
 };
+*/
 // End ref: https://github.com/kot149/zmk-config-roBa
 
 / {
