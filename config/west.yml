@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: ssbb
       url-base: https://github.com/ssbb
+    - name: kot149
+      url-base: https://github.com/kot149
     - name: tkgitpocket
       url-base: https://github.com/tkgitpocket
   projects:
