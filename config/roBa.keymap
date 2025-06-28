@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#include <zephyr/dt-bindings/input/input-event-codes.h> // zip_temp_layer用に追加
+// zip_temp_layer用に追加
 // 以下はどれが必須か不明
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -46,6 +46,10 @@
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
 
+// レイヤーの定義
+#define DEFAULT 0
+#define MOUSE	4
+
 &mt {
     tapping-term-ms = <200>; // ref: https://github.com/kot149/zmk-config-roBa
     quick-tap-ms = <250>; // ref: https://github.com/kot149/zmk-config-roBa
@@ -86,8 +90,7 @@
     >;
 };
 
-
-&mkp_input_listener { input-processors = <&zip_temp_layer 4 10000>; };
+&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
 
 &trackball { cpi = <800>; };
 
@@ -95,8 +98,8 @@
     compatible = "zmk,input-listener";
 
     auto-mouse-layer {
-        layers = <0 4>;
-        input-processors = <&zip_temp_layer 4 10000>;
+        layers = <DEFAULT MOUSE>;
+        input-processors = <&zip_temp_layer MOUSE 10000>;
         process-next;
     };
 
@@ -104,6 +107,41 @@
 // End ref: https://github.com/kot149/zmk-config-roBa
 
 / {
+	// Start ref: https://github.com/kot149/zmk-config-roBa
+    input_processors {
+        wheel_x_scaler: wheel_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+
+    layer_listeners {
+        compatible = "zmk,layer-listeners";
+
+        release_alt {
+            layers = <ALT_TAB ALT_TAB_TB>;
+            bindings = <&kt_on LEFT_ALT &kt_off LEFT_ALT>;
+        };
+
+        release_ctrl {
+            layers = <CTRL_TAB CTRL_TAB_TB>;
+            bindings = <&kt_on LCTRL &kt_off LCTRL>;
+        };
+
+        // AML_indicator {
+        //     layers = <MOUSE>;
+        //     bindings = <&kp LS(LA(LC(LG(H)))) &kp LS(LA(LC(LG(H))))>;
+        // };
+        // AML {
+        //     layers = <MOUSE>;
+        //     bindings = <&to MOUSE &none>;
+        // };
+    };
+	// End ref: https://github.com/kot149/zmk-config-roBa
+
     combos {
         compatible = "zmk,combos";
 
