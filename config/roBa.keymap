@@ -11,6 +11,8 @@
 #include <behaviors/rgbled_widget.dtsi>
 #include <dt-bindings/zmk/outputs.h>
 
+#include <layout_shift_kp_override.dtsi> // https://github.com/kot149/zmk-layout-shift
+
 // ロータリーエンコーダにマウススクロールを割り当てる
 //   ref: https://zenn.dev/nya3_neko2/scraps/4149ad6f41a584
 //   ref: https://qiita.com/Reotech/items/e048073b3c5831d3e1c2
@@ -104,9 +106,6 @@
 
 };
 // End ref: https://github.com/kot149/zmk-config-roBa
-
-#include <layout_shift_kp_override.dtsi> // https://github.com/kot149/zmk-layout-shift
-CONFIG_LAYOUT_SHIFT_TARGET_JIS=y
 
 / {
 	// Start ref: https://github.com/kot149/zmk-config-roBa
