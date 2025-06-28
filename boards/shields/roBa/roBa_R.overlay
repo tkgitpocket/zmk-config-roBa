@@ -56,13 +56,12 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-        orientation = <180>;
     };
 };
 
 / {
     trackball_listener {
-        status = "okay";
+        status = "disabled";
         compatible = "zmk,input-listener";
         device = <&trackball>;
     };

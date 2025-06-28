@@ -97,7 +97,8 @@
 // トラックボールの設定はオーバーレイファイルで行うため、ここでは削除
 // &trackball { cpi = <800>; };
 
-// トラックボールリスナーを有効化
+// トラックボールリスナーを無効化
+/*
 &trackball_listener {
     compatible = "zmk,input-listener";
 
@@ -109,7 +110,6 @@
     };
 
     // スクロール機能は一時的に無効化
-    /*
     scroller {
         layers = <SCROLL>;
         input-processors =
@@ -117,8 +117,8 @@
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
     };
-    */
 };
+*/
 // End ref: https://github.com/kot149/zmk-config-roBa
 
 / {
