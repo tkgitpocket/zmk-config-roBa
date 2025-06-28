@@ -106,7 +106,6 @@
 // End ref: https://github.com/kot149/zmk-config-roBa
 
 #include <layout_shift_kp_override.dtsi> // https://github.com/kot149/zmk-layout-shift
-# Japanese (JIS) layout
 CONFIG_LAYOUT_SHIFT_TARGET_JIS=y
 
 / {
