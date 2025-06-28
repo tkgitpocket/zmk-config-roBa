@@ -18,7 +18,7 @@
 //   ref: https://qiita.com/Reotech/items/e048073b3c5831d3e1c2
 
 #define ZMK_MOUSE_POINTING_SCRL_VAL 100 // マウススクロール量定義
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100 // ref: https://zenn.dev/nya3_neko2/scraps/4149ad6f41a584
+
 
 // 【ZMK】OS設定を日本語キーボードのまま使う
 //    ref: https://note.com/kloir_z/n/n314e739f03a1
@@ -57,7 +57,7 @@
 #define SCROLL	5
 
 &mt {
-    tapping-term-ms = <250>; // ref: https://github.com/kot149/zmk-config-roBa
+    tapping-term-ms = <2200>; // ref: https://github.com/kot149/zmk-config-roBa
     quick-tap-ms = <250>; // ref: https://github.com/kot149/zmk-config-roBa
     flavor = "balanced";
 //    quick-tap-ms = <0>;
@@ -115,7 +115,7 @@
     scroller {
         layers = <SYMBOL NUM_FUNCTION SCROLL>;
         input-processors =
-            <&zip_xy_scaler 1 2>,
+            <&zip_xy_scaler 2 3>,
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
     };
