@@ -57,8 +57,8 @@
 #define SCROLL	5
 
 &mt {
-    tapping-term-ms = <10200>; // ref: https://github.com/kot149/zmk-config-roBa
-    quick-tap-ms = <250>; // ref: https://github.com/kot149/zmk-config-roBa
+    tapping-term-ms = <250>; // ref: https://github.com/kot149/zmk-config-roBa
+    quick-tap-ms = <300>; // ref: https://github.com/kot149/zmk-config-roBa
     flavor = "balanced";
 //    quick-tap-ms = <0>;
 };
@@ -66,7 +66,7 @@
 // Start ref: https://github.com/kot149/zmk-config-roBa
 &lt {
     tapping-term-ms = <250>;
-    quick-tap-ms = <7250>;
+    quick-tap-ms = <300>;
     flavor = "balanced";
 };
 
@@ -86,9 +86,9 @@
 //         8 // O
         10 // A
         22 // Z
-        18 // J
-        19 // K
-        20 // L
+//        18 // J
+//        19 // K
+//        20 // L
         21 // ;
         34 // Ctrl
         40 // Backspace
@@ -321,7 +321,7 @@
         mouse_ctrl {
             bindings = <
 &kp TAB               &kp LEFT_ALT  &kp END       &to 6             &kp ESC                                              &kp LC(Y)       &mkp MB4   &mkp MCLK  &mkp MB5   &kp UP_ARROW
-&mt LCTRL HOME        &kp LC(S)     &kp DEL       &kp RIGHT_ARROW   &kp LEFT_SHIFT  &trans                &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &none      &mkp RCLK  &lt_to_layer_0 5 MINUS
+&mt LCTRL HOME        &kp LC(S)     &kp DEL       &kp RIGHT_ARROW   &kp LEFT_SHIFT  &trans                &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &lt_to_layer_0 5 MINUS
 &mt LEFT_SHIFT LC(Z)  &kp LC(X)     &kp LC(C)     &kp LC(V)         &kp LEFT_ARROW  &kp ASTERISK          &kp PAGE_DOWN  &kp DOWN_ARROW  &none      &mkp LCLK  &mkp RCLK  &kp ENTER
 &mt LEFT_SHIFT ESC    &kp LWIN      &kp LEFT_ALT  &kp INT_MUHENKAN  &kp SPACE       &kp INT_MUHENKAN      &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
             >;
