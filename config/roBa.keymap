@@ -105,13 +105,14 @@
 &trackball_listener {
     compatible = "zmk,input-listener";
 
-    // 基本的なオートマウスレイヤー設定のみ有効化
+    // 基本的なオートマウスレイヤー設定
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
         input-processors = <&zip_temp_layer MOUSE 10000>;
         process-next;
     };
 
+    // スクロール設定
     scroller {
         layers = <SYMBOL NUM_FUNCTION SCROLL>;
         input-processors =
@@ -119,7 +120,7 @@
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
     };
-    
+/*
     // x(横)スクロールを無効化 = 縦だけのスクロールにする、つもりだけど、うまく動かず
     // 横スクロールを無効化（縦スクロールのみ）
     disable-scroll-x {
@@ -128,6 +129,7 @@
         input-processors = <&zip_xy_scaler 0 1>;
         process-next;
     };
+*/
     // 代替方法: SCROLLレイヤー専用のスクロール設定
     scroll-vertical-only {
         layers = <SCROLL>;
@@ -140,6 +142,7 @@
 // End ref: https://github.com/kot149/zmk-config-roBa
 
 / {
+/*
 	// Start ref: https://github.com/kot149/zmk-config-roBaggggg
     input_processors {
         wheel_x_scaler: wheel_x_scaler {
@@ -150,7 +153,7 @@
             track-remainders;
         };
     };
-
+*/
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
