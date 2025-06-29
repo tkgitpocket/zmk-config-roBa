@@ -119,7 +119,7 @@
     };
 
     disable-scroll-x {
-        layers = <MEDIA>;
+        layers = <SCROLL>;
         input-processors = <&wheel_x_scaler 0 1>;
         process-next;
     };
