@@ -112,29 +112,11 @@
         process-next;
     };
 
-    // スクロール設定
+    // スクロール設定（縦スクロールのみ）
     scroller {
         layers = <SYMBOL NUM_FUNCTION SCROLL>;
         input-processors =
-            <&zip_xy_scaler 1 5>,
-            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            <&zip_xy_to_scroll_mapper>;
-    };
-/*
-    // x(横)スクロールを無効化 = 縦だけのスクロールにする、つもりだけど、うまく動かず
-    // 横スクロールを無効化（縦スクロールのみ）
-    disable-scroll-x {
-        layers = <SCROLL>;
-//        input-processors = <&wheel_x_scaler 0 1>;
-        input-processors = <&zip_xy_scaler 0 1>;
-        process-next;
-    };
-*/
-    // 代替方法: SCROLLレイヤー専用のスクロール設定
-    scroll-vertical-only {
-        layers = <SCROLL>;
-        input-processors = 
-            <&zip_xy_scaler 0 5>,
+            <&zip_xy_scaler 0 5>, // X軸を0に設定して横スクロールを無効化
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
     };
@@ -306,9 +288,6 @@
 &mt LEFT_SHIFT ESC  &mt LEFT_GUI TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_MUHENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &mt RCTRL BACKSPACE  &lt 1 ENTER                                &kp SLASH
             >;
 
-            // sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>; // デフォルト
-
-//            sensor-bindings = <&scroll_up_down>; // ロータリーエンコーダをマウススクロールにする
             // ロータリーエンコーダをマウススクロールにする
             sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
         };
@@ -320,7 +299,8 @@
 &kp TAB             &kp PLUS           &kp ASTERISK  &kp TILDE               &kp PRINTSCREEN  &trans                &kp PERIOD           &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp UNDERSCORE
 &mt LEFT_SHIFT ESC  &kp LEFT_WIN       &kp LEFT_ALT  &mt LCTRL INT_MUHENKAN  &kp SPACE        &kp INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                                                     &kp QUESTION
             >;
-            sensor-bindings = <&inc_dec_kp LC(PAGE_DOWN) LC(PAGE_UP)>; // 下に回すとPAGE_DOWN、上に回すとPAGE_UP
+            // ロータリーエンコーダでPAGE_DOWN/PAGE_UP
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         mouse_ctrl {
