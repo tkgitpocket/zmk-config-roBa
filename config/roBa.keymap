@@ -18,7 +18,7 @@
 //   ref: https://qiita.com/Reotech/items/e048073b3c5831d3e1c2
 
 #define ZMK_MOUSE_POINTING_SCRL_VAL 100 // マウススクロール量定義
-
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 1000
 
 // 【ZMK】OS設定を日本語キーボードのまま使う
 //    ref: https://note.com/kloir_z/n/n314e739f03a1
@@ -112,6 +112,7 @@
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
     };
+
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
         input-processors = <&zip_temp_layer MOUSE 3000>;
