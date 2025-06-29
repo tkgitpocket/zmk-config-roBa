@@ -121,11 +121,24 @@
     };
     
     // x(横)スクロールを無効化 = 縦だけのスクロールにする、つもりだけど、うまく動かず
+    // 横スクロールを無効化（縦スクロールのみ）
     disable-scroll-x {
         layers = <SCROLL>;
-        input-processors = <&wheel_x_scaler 0 1>;
+//        input-processors = <&wheel_x_scaler 0 1>;
+        input-processors = <&zip_xy_scaler 0 1>;
         process-next;
     };
+/*
+
+    // 代替方法: SCROLLレイヤー専用のスクロール設定
+    scroll-vertical-only {
+        layers = <SCROLL>;
+        input-processors = 
+            <&zip_xy_scaler 0 5>,
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+            <&zip_xy_to_scroll_mapper>;
+    };
+*/
 };
 // End ref: https://github.com/kot149/zmk-config-roBa
 
@@ -262,16 +275,6 @@
             tapping-term-ms = <200>;
         };
 
-        // 新しいスクロール動作の追加
-
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            // 追加: スクロールのタップ時間を設定 (20ms)
-            tap-ms = <20>;
-        };
-
         // ref: https://zenn.dev/kot149/articles/zmk-auto-mouse-layer#shift%2B%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AE%E5%8B%95%E4%BD%9C%E6%94%B9%E5%96%84
         // Shift+クリックの動作改善のbehavior定義
         tog_off: toggle_layer_off {
@@ -305,7 +308,9 @@
 
             // sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>; // デフォルト
 
-            sensor-bindings = <&scroll_up_down>; // ロータリーエンコーダをマウススクロールにする
+//            sensor-bindings = <&scroll_up_down>; // ロータリーエンコーダをマウススクロールにする
+            // ロータリーエンコーダをマウススクロールにする
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
         };
 
         symbol {
