@@ -128,8 +128,6 @@
         input-processors = <&zip_xy_scaler 0 1>;
         process-next;
     };
-/*
-
     // 代替方法: SCROLLレイヤー専用のスクロール設定
     scroll-vertical-only {
         layers = <SCROLL>;
@@ -138,12 +136,11 @@
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
     };
-*/
 };
 // End ref: https://github.com/kot149/zmk-config-roBa
 
 / {
-	// Start ref: https://github.com/kot149/zmk-config-roBa
+	// Start ref: https://github.com/kot149/zmk-config-roBaggggg
     input_processors {
         wheel_x_scaler: wheel_x_scaler {
             compatible = "zmk,input-processor-scaler";
