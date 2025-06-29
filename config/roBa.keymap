@@ -101,7 +101,8 @@
 // トラックボールの設定はオーバーレイファイルで行うため、ここでは削除
 // &trackball { cpi = <800>; };
 
-// トラックボールリスナーを有効化
+// トラックボールリスナーを有効化（トラックボールが存在する場合のみ）
+#if DT_NODE_HAS_STATUS(DT_NODELABEL(trackball_listener), okay)
 &trackball_listener {
     compatible = "zmk,input-listener";
 
@@ -121,6 +122,7 @@
             <&zip_xy_to_scroll_mapper>;
     };
 };
+#endif
 // End ref: https://github.com/kot149/zmk-config-roBa
 
 / {

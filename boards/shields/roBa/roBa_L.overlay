@@ -20,6 +20,13 @@
     status = "okay";
 };
 
+/ {
+    trackball_listener {
+        status = "disabled";
+        compatible = "zmk,input-listener";
+    };
+};
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -46,11 +53,4 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
-};
-
-/ {
-    trackball_listener {
-        status = "disabled";
-        compatible = "zmk,input-listener";
-    };
 };
