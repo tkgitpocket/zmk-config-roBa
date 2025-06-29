@@ -47,3 +47,10 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 };
+
+/ {
+    trackball_listener {
+        status = "disabled";
+        compatible = "zmk,input-listener";
+    };
+};
