@@ -90,6 +90,51 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        mb4 {
+            bindings = <&mkp MB4>;
+            key-positions = <6 7>;
+        };
+
+        mb5 {
+            bindings = <&mkp MB5>;
+            key-positions = <7 8>;
+        };
+
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <18 19>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <19 20>;
+        };
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <20 21>;
+        };
+
+        comma {
+            bindings = <&kp COMMA>;
+            key-positions = <30 31>;
+        };
+
+        dot {
+            bindings = <&kp DOT>;
+            key-positions = <31 32>;
+        };
+
+        asterisk {
+            bindings = <&kp ASTERISK>;
+            key-positions = <17 18>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <29 30>;
+        };
     };
 
     macros {
