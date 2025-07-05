@@ -167,26 +167,24 @@
             tap-ms = <20>;
     	};
 
-        // Ctrl + A
+        // Ctrl + A (ホールド判定を調整)
         mt_lctl_a: mod_tap_lctl_a {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
-            flavor = "mod-tap";
-            bindings = <&kp A>;
-            mods = <(MOD_LCTL)>;
+            flavor = "tap-preferred";
+            bindings = <&kp LCTRL>, <&kp A>;
             tapping-term-ms = <300>;
-            hold-tap-behavior = "tap-preferred";
+            quick-tap-ms = <200>;
         };
 
-        // Shift + Z
+        // Shift + Z (ホールド判定を調整)
         mt_lsft_z: mod_tap_lsft_z {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
-            flavor = "mod-tap";
-            bindings = <&kp Z>;
-            mods = <(MOD_LSFT)>;
+            flavor = "tap-preferred";
+            bindings = <&kp LSHFT>, <&kp Z>;
             tapping-term-ms = <300>;
-            hold-tap-behavior = "tap-preferred";
+            quick-tap-ms = <200>;
         };
     };
 
