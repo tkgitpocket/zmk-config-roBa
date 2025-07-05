@@ -216,7 +216,7 @@
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
             //コンパイルエラー sensor-bindings = <&inc_dec_kp C_APP_PREV C_APP_NEXT>   // アプリケーション切り替え
             //sensor-bindings = <&inc_dec_kp C_APP_GROUP_PREV C_APP_GROUP_NEXT>;  // アプリグループ切り替え
-            //sensor-bindings = <&inc_dec_kp C_WINDOW_PREV C_WINDOW_NEXT>;    // ウィンドウ切り替え
+            //コンパイルエラー sensor-bindings = <&inc_dec_kp C_WINDOW_PREV C_WINDOW_NEXT>;    // ウィンドウ切り替え
             //sensor-bindings = <&inc_dec_kp C_WORKSPACE_PREV C_WORKSPACE_NEXT>;  // ワークスペース切り替え
             //sensor-bindings = <&inc_dec_kp C_SLEEP C_SLEEP>;                    // スリープ
             //sensor-bindings = <&inc_dec_kp C_SCREENSHOT C_SCREENSHOT>;          // スクリーンショット
@@ -238,7 +238,7 @@
 &trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans                                                  &kp QUESTION
             >;
 
-            sensor-bindings = <&inc_dec_kp C_WINDOW_PREV C_WINDOW_NEXT>;    // ウィンドウ切り替え
+            sensor-bindings = <&scroll_up_down>;
         };
 
         MOUSE {
