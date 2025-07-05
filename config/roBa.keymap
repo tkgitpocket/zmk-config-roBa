@@ -30,6 +30,9 @@
 #define JP_KANA         LANGUAGE_1        // かな
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
+#define JP_BSLH  		INT1			  // (backslash)
+
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // レイヤーの定義
 
@@ -155,6 +158,32 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            tap-ms = <20>;
+    	};
+
+        // Ctrl + A
+        mt_lctl_a: mod_tap_lctl_a {
+            flavor = "mod-tap";
+            bindings = <&kp A>;
+            mods = <(MOD_LCTL)>;
+            tapping-term-ms = <300>;
+            hold-tap-behavior = "tap-preferred";
+        };
+
+        // Shift + Z
+        mt_lsft_z: mod_tap_lsft_z {
+            flavor = "mod-tap";
+            bindings = <&kp Z>;
+            mods = <(MOD_LSFT)>;
+            tapping-term-ms = <300>;
+            hold-tap-behavior = "tap-preferred";
+        };
     };
 
     keymap {
@@ -163,12 +192,14 @@
         default_layer {
             bindings = <
 &kp Q             &kp W             &kp E      &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&kp A             &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
-&mt LEFT_SHIFT Z  &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
+&mt_lctl_a        &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
+&mt_lsft_z        &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
 &mt LEFT_WIN ESC  &mt LEFT_ALT TAB  &kp LCTRL  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp SLASH
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings =
+                <&scroll_up_down>,
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         symbol {
@@ -178,6 +209,7 @@
 &mt LEFT_SHIFT TAB  &kp PLUS           &kp ASTERISK  &kp TILDE       &kp PRINTSCREEN  &trans                   &trans  &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp UNDERSCORE
 &mt LEFT_SHIFT ESC  &kp LEFT_WIN       &kp LCTRL     &trans          &kp SPACE        &kp INTERNATIONAL_5      &trans  &trans                                                                        &kp QUESTION
             >;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         mouse_arrow_ctrl {
@@ -187,6 +219,7 @@
 &kp LC(Z)       &kp LC(X)     &kp LC(C)  &kp LC(V)    &kp LEFT        &kp EQUAL                    &kp PAGE_DOWN  &kp DOWN       &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
 &trans          &trans        &trans     &trans       &trans          &trans                       &kp RCTRL      &kp ENTER                                       &kp RIGHT_SHIFT
             >;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         num {
@@ -197,7 +230,7 @@
 &trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans                                                  &kp QUESTION
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         MOUSE {
@@ -207,6 +240,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &mkp LCLK  &mkp RCLK  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                   &trans
             >;
+
+            sensor-bindings = <&scroll_up_down>;
         };
 
         SCROLL {
@@ -216,6 +251,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+
+            sensor-bindings = <&scroll_up_down>;
         };
 
         layer_6 {
@@ -225,6 +262,8 @@
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
+
+            sensor-bindings = <&scroll_up_down>;
         };
     };
 };
