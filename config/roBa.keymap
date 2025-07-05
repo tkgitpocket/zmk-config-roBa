@@ -43,7 +43,6 @@
 #define MOUSE	4
 #define SCROLL	5
 #define MODIFIER_BT	6
-#define MODIFIER	7
 
 &mt {
     flavor = "balanced";
@@ -168,6 +167,28 @@
 
             tap-ms = <20>;
     	};
+
+        // Aキー専用のカスタムビヘイビア
+        mt_lctl_a: mod_tap_lctl_a {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "tap-preferred";
+            bindings = <&sk LCTRL>, <&kp A>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+        };
+
+        // Zキー専用のカスタムビヘイビア
+        mt_lsft_z: mod_tap_lsft_z {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "tap-preferred";
+            bindings = <&sk LSHFT>, <&kp Z>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+        };
     };
 
     keymap {
@@ -176,8 +197,8 @@
         default_layer {
             bindings = <
 &kp Q             &kp W             &kp E      &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&lt MODIFIER A      &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
-&lt MODIFIER Z      &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
+&mt_lctl_a        &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
+&mt_lsft_z        &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
 &mt LEFT_WIN ESC  &mt LEFT_ALT TAB  &kp LCTRL  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp SLASH
             >;
 
@@ -245,17 +266,6 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
-            >;
-
-            sensor-bindings = <&scroll_up_down>;
-        };
-
-        modifier {
-            bindings = <
-&sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL                      &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL
-&sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL      &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL
-&sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT      &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT
-&sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT      &sk LSHFT  &sk LSHFT                          &sk LSHFT
             >;
 
             sensor-bindings = <&scroll_up_down>;
