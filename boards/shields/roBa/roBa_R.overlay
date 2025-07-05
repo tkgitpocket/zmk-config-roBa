@@ -22,7 +22,7 @@
             #binding-cells = <0>;
             flavor = "mod-tap";
             bindings = <&kp A>;
-            mods = <(MOD_LCTL)>;
+            mods = <0x01>;  // MOD_LCTL
             tapping-term-ms = <300>;
             hold-tap-behavior = "tap-preferred";
         };
@@ -33,7 +33,7 @@
             #binding-cells = <0>;
             flavor = "mod-tap";
             bindings = <&kp Z>;
-            mods = <(MOD_LSFT)>;
+            mods = <0x02>;  // MOD_LSFT
             tapping-term-ms = <300>;
             hold-tap-behavior = "tap-preferred";
         };
