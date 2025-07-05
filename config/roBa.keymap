@@ -212,20 +212,21 @@
 &kp LC(Z)       &kp LC(X)     &kp LC(C)  &kp LC(V)    &kp LEFT        &kp EQUAL                    &kp PAGE_DOWN  &kp DOWN       &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
 &trans          &trans        &trans     &trans       &trans          &trans                       &kp RCTRL      &kp ENTER                                       &kp RIGHT_SHIFT
             >;
-            sensor-bindings = <&inc_dec_kp C_APP_PREV C_APP_NEXT>   // アプリケーション切り替え
-            //<&inc_dec_kp C_APP_PREV C_APP_NEXT>   // アプリケーション切り替え
-            //<&inc_dec_kp C_APP_GROUP_PREV C_APP_GROUP_NEXT>;  // アプリグループ切り替え
-            //<&inc_dec_kp C_WINDOW_PREV C_WINDOW_NEXT>;    // ウィンドウ切り替え
-            //<&inc_dec_kp C_WORKSPACE_PREV C_WORKSPACE_NEXT>;  // ワークスペース切り替え
-            //<&inc_dec_kp C_SLEEP C_SLEEP>;                    // スリープ
-            //<&inc_dec_kp C_SCREENSHOT C_SCREENSHOT>;          // スクリーンショット
-            //<&inc_dec_kp C_ZOOM_IN C_ZOOM_OUT>;               // ズームイン/アウト
-            //<&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>;     // Ctrl+左右矢印
-            //<&inc_dec_kp LS(LEFT_ARROW) LS(RIGHT_ARROW)>;     // Shift+左右矢印
-            //<&inc_dec_kp LA(LEFT_ARROW) LA(RIGHT_ARROW)>;     // Alt+左右矢印
-            //<&inc_dec_kp LC(LS(LEFT_BRACKET)) LC(LS(RIGHT_BRACKET))>; // タブ切り替え
-            //<&inc_dec_kp LC(UP_ARROW) LC(DOWN_ARROW)>;    // 行移動
-            //<&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>; // 単語移動
+
+            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
+            //コンパイルエラー sensor-bindings = <&inc_dec_kp C_APP_PREV C_APP_NEXT>   // アプリケーション切り替え
+            //sensor-bindings = <&inc_dec_kp C_APP_GROUP_PREV C_APP_GROUP_NEXT>;  // アプリグループ切り替え
+            //sensor-bindings = <&inc_dec_kp C_WINDOW_PREV C_WINDOW_NEXT>;    // ウィンドウ切り替え
+            //sensor-bindings = <&inc_dec_kp C_WORKSPACE_PREV C_WORKSPACE_NEXT>;  // ワークスペース切り替え
+            //sensor-bindings = <&inc_dec_kp C_SLEEP C_SLEEP>;                    // スリープ
+            //sensor-bindings = <&inc_dec_kp C_SCREENSHOT C_SCREENSHOT>;          // スクリーンショット
+            //sensor-bindings = <&inc_dec_kp C_ZOOM_IN C_ZOOM_OUT>;               // ズームイン/アウト
+            //sensor-bindings = <&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>;     // Ctrl+左右矢印
+            //sensor-bindings = <&inc_dec_kp LS(LEFT_ARROW) LS(RIGHT_ARROW)>;     // Shift+左右矢印
+            //sensor-bindings = <&inc_dec_kp LA(LEFT_ARROW) LA(RIGHT_ARROW)>;     // Alt+左右矢印
+            //sensor-bindings = <&inc_dec_kp LC(LS(LEFT_BRACKET)) LC(LS(RIGHT_BRACKET))>; // タブ切り替え
+            //sensor-bindings = <&inc_dec_kp LC(UP_ARROW) LC(DOWN_ARROW)>;    // 行移動
+            //sensor-bindings = <&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>; // 単語移動
 
         };
 
