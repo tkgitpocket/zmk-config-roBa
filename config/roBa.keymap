@@ -151,6 +151,28 @@
     };
 
     behaviors {
+        // Aキー用のカスタムビヘイビア（タップ時はA、ホールド時はCtrl）
+        custom_a_ctrl: custom_a_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CUSTOM_A_CTRL";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp A>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+        };
+
+        // Zキー用のカスタムビヘイビア（タップ時はZ、ホールド時はShift）
+        custom_z_shift: custom_z_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CUSTOM_Z_SHIFT";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&kp Z>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+        };
+
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -168,27 +190,7 @@
             tap-ms = <20>;
     	};
 
-        // Aキー専用のカスタムビヘイビア
-        mt_lctl_a: mod_tap_lctl_a {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "tap-preferred";
-            bindings = <&sk LCTRL>, <&kp A>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-        };
 
-        // Zキー専用のカスタムビヘイビア
-        mt_lsft_z: mod_tap_lsft_z {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "tap-preferred";
-            bindings = <&sk LSHFT>, <&kp Z>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-        };
     };
 
     keymap {
@@ -197,8 +199,8 @@
         default_layer {
             bindings = <
 &kp Q             &kp W             &kp E      &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&mt_lctl_a        &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
-&mt_lsft_z        &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
+&custom_a_ctrl    &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
+&custom_z_shift   &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
 &mt LEFT_WIN ESC  &mt LEFT_ALT TAB  &kp LCTRL  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp SLASH
             >;
 
