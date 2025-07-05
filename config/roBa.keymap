@@ -211,7 +211,7 @@
 &mt LEFT_SHIFT ESC  &kp LEFT_WIN       &kp LCTRL     &trans          &kp SPACE        &kp INTERNATIONAL_5      &trans  &trans                                                                        &kp QUESTION
             >;
             //sensor-bindings = <&scroll_up_down>;
-            sensor-bindings = <&alt_p, &alt_n>;
+            sensor-bindings = <&alt_p &alt_n>;
         };
 
         mouse_arrow_ctrl {
