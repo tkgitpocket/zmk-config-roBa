@@ -14,6 +14,7 @@
             ;
 };
 
+#include <dt-bindings/zmk/modifiers.h>
 / {
     behaviors {
         // Aキー用のカスタムビヘイビア（タップ時はA、ホールド時はCtrl）
