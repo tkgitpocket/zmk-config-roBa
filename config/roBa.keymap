@@ -166,26 +166,6 @@
 
             tap-ms = <20>;
     	};
-
-        // Ctrl + A (ホールド判定を調整)
-        mt_lctl_a: mod_tap_lctl_a {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp LCTRL>, <&kp A>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <200>;
-        };
-
-        // Shift + Z (ホールド判定を調整)
-        mt_lsft_z: mod_tap_lsft_z {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp LSHFT>, <&kp Z>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <200>;
-        };
     };
 
     keymap {
@@ -194,8 +174,8 @@
         default_layer {
             bindings = <
 &kp Q             &kp W             &kp E      &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&mt_lctl_a        &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
-&mt_lsft_z        &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
+&mt LCTRL A       &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
+&mt LSHFT Z       &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
 &mt LEFT_WIN ESC  &mt LEFT_ALT TAB  &kp LCTRL  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp SLASH
             >;
 
