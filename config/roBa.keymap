@@ -252,10 +252,10 @@
 
         modifier {
             bindings = <
-&kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL                      &kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL
-&kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL      &kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL  &kp LCTRL
-&kp LSHFT  &kp LSHFT  &kp LSHFT  &kp LSHFT  &kp LSHFT  &kp LSHFT      &kp LSHFT  &kp LSHFT  &kp LSHFT  &kp LSHFT  &kp LSHFT  &kp LSHFT
-&kp LSHFT  &kp LSHFT  &kp LSHFT  &kp LSHFT  &kp LSHFT  &kp LSHFT      &kp LSHFT  &kp LSHFT                          &kp LSHFT
+&sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL                      &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL
+&sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL      &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL  &sk LCTRL
+&sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT      &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT
+&sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT  &sk LSHFT      &sk LSHFT  &sk LSHFT                          &sk LSHFT
             >;
 
             sensor-bindings = <&scroll_up_down>;
