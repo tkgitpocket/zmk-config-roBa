@@ -151,7 +151,7 @@
     };
 
     // Aキー用のカスタムビヘイビア（タップ時はA、ホールド時はCtrl）
-    custom_a_ctrl: custom_a_ctrl_behavior {
+    custom_a_ctrl: custom_a_ctrl {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "mod-tap";
@@ -161,7 +161,7 @@
     };
 
     // Zキー用のカスタムビヘイビア（タップ時はZ、ホールド時はShift）
-    custom_z_shift: custom_z_shift_behavior {
+    custom_z_shift: custom_z_shift {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <0>;
         flavor = "mod-tap";
