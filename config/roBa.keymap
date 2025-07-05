@@ -155,7 +155,6 @@
         custom_a_ctrl: custom_a_ctrl {
             compatible = "zmk,behavior-hold-tap";
             label = "CUSTOM_A_CTRL";
-            #binding-cells = <0>;
             flavor = "mod-tap";
             bindings = <&kp A>;
             mods = <(MOD_LCTL)>;
@@ -167,7 +166,6 @@
         custom_z_shift: custom_z_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "CUSTOM_Z_SHIFT";
-            #binding-cells = <0>;
             flavor = "mod-tap";
             bindings = <&kp Z>;
             mods = <(MOD_LSFT)>;
