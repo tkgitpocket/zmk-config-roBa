@@ -150,27 +150,27 @@
         };
     };
 
+    // Aキー用のカスタムビヘイビア（タップ時はA、ホールド時はCtrl）
+    custom_a_ctrl: custom_a_ctrl_behavior {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "mod-tap";
+        bindings = <&kp A>;
+        mods = <(MOD_LCTL)>;
+        tapping-term-ms = <300>;
+        hold-tap-behavior = "tap-preferred";
+    };
+
+    // Zキー用のカスタムビヘイビア（タップ時はZ、ホールド時はShift）
+    custom_z_shift: custom_z_shift_behavior {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "mod-tap";
+        bindings = <&kp Z>;
+        mods = <(MOD_LSFT)>;
+        tapping-term-ms = <300>;
+        hold-tap-behavior = "tap-preferred";
+    };
+
     behaviors {
-        // Aキー用のカスタムビヘイビア（タップ時はA、ホールド時はCtrl）
-        custom_a_ctrl: custom_a_ctrl_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            flavor = "mod-tap";
-            bindings = <&kp A>;
-            mods = <(MOD_LCTL)>;
-            tapping-term-ms = <300>;
-            hold-tap-behavior = "tap-preferred";
-        };
-
-        // Zキー用のカスタムビヘイビア（タップ時はZ、ホールド時はShift）
-        custom_z_shift: custom_z_shift_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            flavor = "mod-tap";
-            bindings = <&kp Z>;
-            mods = <(MOD_LSFT)>;
-            tapping-term-ms = <300>;
-            hold-tap-behavior = "tap-preferred";
-        };
-
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
