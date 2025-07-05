@@ -5,6 +5,7 @@
 
 #define ZMK_MOUSE_POINTING_SCRL_VAL 100
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // 【ZMK】OS設定を日本語キーボードのまま使う
 //    ref: https://note.com/kloir_z/n/n314e739f03a1
