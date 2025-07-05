@@ -181,9 +181,7 @@
 &mt LEFT_WIN ESC  &mt LEFT_ALT TAB  &kp LCTRL  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp SLASH
             >;
 
-            sensor-bindings =
-                <&scroll_up_down>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         symbol {
@@ -193,7 +191,7 @@
 &mt LEFT_SHIFT TAB  &kp PLUS           &kp ASTERISK  &kp TILDE       &kp PRINTSCREEN  &trans                   &trans  &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp UNDERSCORE
 &mt LEFT_SHIFT ESC  &kp LEFT_WIN       &kp LCTRL     &trans          &kp SPACE        &kp INTERNATIONAL_5      &trans  &trans                                                                        &kp QUESTION
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp LC(LS(LEFT_BRACKET)) LC(LS(RIGHT_BRACKET))>; // タブ切り替え
         };
 
         mouse_arrow_ctrl {
@@ -203,7 +201,21 @@
 &kp LC(Z)       &kp LC(X)     &kp LC(C)  &kp LC(V)    &kp LEFT        &kp EQUAL                    &kp PAGE_DOWN  &kp DOWN       &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
 &trans          &trans        &trans     &trans       &trans          &trans                       &kp RCTRL      &kp ENTER                                       &kp RIGHT_SHIFT
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_APP_PREV C_APP_NEXT>   // アプリケーション切り替え
+            //<&inc_dec_kp C_APP_PREV C_APP_NEXT>   // アプリケーション切り替え
+            //<&inc_dec_kp C_APP_GROUP_PREV C_APP_GROUP_NEXT>;  // アプリグループ切り替え
+            //<&inc_dec_kp C_WINDOW_PREV C_WINDOW_NEXT>;    // ウィンドウ切り替え
+            //<&inc_dec_kp C_WORKSPACE_PREV C_WORKSPACE_NEXT>;  // ワークスペース切り替え
+            //<&inc_dec_kp C_SLEEP C_SLEEP>;                    // スリープ
+            //<&inc_dec_kp C_SCREENSHOT C_SCREENSHOT>;          // スクリーンショット
+            //<&inc_dec_kp C_ZOOM_IN C_ZOOM_OUT>;               // ズームイン/アウト
+            //<&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>;     // Ctrl+左右矢印
+            //<&inc_dec_kp LS(LEFT_ARROW) LS(RIGHT_ARROW)>;     // Shift+左右矢印
+            //<&inc_dec_kp LA(LEFT_ARROW) LA(RIGHT_ARROW)>;     // Alt+左右矢印
+            //<&inc_dec_kp LC(LS(LEFT_BRACKET)) LC(LS(RIGHT_BRACKET))>; // タブ切り替え
+            //<&inc_dec_kp LC(UP_ARROW) LC(DOWN_ARROW)>;    // 行移動
+            //<&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>; // 単語移動
+
         };
 
         num {
@@ -214,7 +226,7 @@
 &trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans                                                  &kp QUESTION
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_WINDOW_PREV C_WINDOW_NEXT>;    // ウィンドウ切り替え
         };
 
         MOUSE {
