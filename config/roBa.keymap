@@ -169,6 +169,8 @@
 
         // Ctrl + A
         mt_lctl_a: mod_tap_lctl_a {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
             flavor = "mod-tap";
             bindings = <&kp A>;
             mods = <(MOD_LCTL)>;
@@ -178,6 +180,8 @@
 
         // Shift + Z
         mt_lsft_z: mod_tap_lsft_z {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
             flavor = "mod-tap";
             bindings = <&kp Z>;
             mods = <(MOD_LSFT)>;
