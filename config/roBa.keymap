@@ -185,12 +185,13 @@
         default_layer {
             bindings = <
 &kp Q             &kp W             &kp E      &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&mt LCTRL A       &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
+&kp A             &mt LCTRL S       &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
 &mt LEFT_SHIFT Z  &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
 &mt LEFT_WIN ESC  &mt LEFT_ALT TAB  &kp LCTRL  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp SLASH
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            //sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         symbol {
@@ -213,7 +214,7 @@
 &trans          &trans        &trans     &trans       &trans          &trans                       &kp RCTRL      &kp ENTER                                       &kp RIGHT_SHIFT
             >;
 
-            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
             //コンパイルエラー sensor-bindings = <&inc_dec_kp C_APP_PREV C_APP_NEXT>   // アプリケーション切り替え
             //sensor-bindings = <&inc_dec_kp C_APP_GROUP_PREV C_APP_GROUP_NEXT>;  // アプリグループ切り替え
             //コンパイルエラー sensor-bindings = <&inc_dec_kp C_WINDOW_PREV C_WINDOW_NEXT>;    // ウィンドウ切り替え
@@ -238,7 +239,7 @@
 &trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans                                                  &kp QUESTION
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
         };
 
         MOUSE {
