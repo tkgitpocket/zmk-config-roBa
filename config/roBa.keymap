@@ -51,7 +51,7 @@
 };
 
 &trackball {
-    automouse-layer = <4>;
+    //automouse-layer = <4>;
     scroll-layers = <5>;
 
     // arrows {
@@ -169,6 +169,22 @@
             tap-ms = <20>;
     	};
 
+        alt_p: alt-positive {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp TAB>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+            keep-mods = <(MOD_LALT)>;
+        };
+
+        alt_n: alt-negative {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LS(TAB)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+            keep-mods = <(MOD_LALT)>;
+        };
+
     };
 
     keymap {
@@ -194,7 +210,8 @@
 &mt LEFT_SHIFT TAB  &kp PLUS           &kp ASTERISK  &kp TILDE       &kp PRINTSCREEN  &trans                   &trans  &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp UNDERSCORE
 &mt LEFT_SHIFT ESC  &kp LEFT_WIN       &kp LCTRL     &trans          &kp SPACE        &kp INTERNATIONAL_5      &trans  &trans                                                                        &kp QUESTION
             >;
-            sensor-bindings = <&scroll_up_down>;
+            //sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&alt_p, &alt_n>;
         };
 
         mouse_arrow_ctrl {
