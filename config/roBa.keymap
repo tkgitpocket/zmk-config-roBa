@@ -156,10 +156,11 @@
             compatible = "zmk,behavior-hold-tap";
             label = "CUSTOM_A_CTRL";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&kp A>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "balanced";
+            flavor = "mod-tap";
+            bindings = <&kp A>;
+            mods = <(MOD_LCTL)>;
+            tapping-term-ms = <300>;
+            hold-tap-behavior = "tap-preferred";
         };
 
         // Zキー用のカスタムビヘイビア（タップ時はZ、ホールド時はShift）
@@ -167,10 +168,11 @@
             compatible = "zmk,behavior-hold-tap";
             label = "CUSTOM_Z_SHIFT";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp Z>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "balanced";
+            flavor = "mod-tap";
+            bindings = <&kp Z>;
+            mods = <(MOD_LSFT)>;
+            tapping-term-ms = <300>;
+            hold-tap-behavior = "tap-preferred";
         };
 
         lt_to_layer_0: lt_to_layer_0 {
