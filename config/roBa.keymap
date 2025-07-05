@@ -32,7 +32,7 @@
 #define JP_HANZEN       GRAVE             // 半角/全角
 #define JP_BSLH  		INT1			  // (backslash)
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define ZMK_MOUSE_POINTING_SCRL_VAL 100
 
 // レイヤーの定義
 
