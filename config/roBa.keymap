@@ -168,6 +168,15 @@
 
             tap-ms = <20>;
     	};
+
+        mouse_scroll: mouse_wheel_scrl{
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+            // 追加: スクロールのタップ時間を設定 (20ms)
+            tap-ms = <20>;
+        };
+
     };
 
     keymap {
@@ -191,7 +200,9 @@
 &mt LEFT_SHIFT TAB  &kp PLUS           &kp ASTERISK  &kp TILDE       &kp PRINTSCREEN  &trans                   &trans  &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp UNDERSCORE
 &mt LEFT_SHIFT ESC  &kp LEFT_WIN       &kp LCTRL     &trans          &kp SPACE        &kp INTERNATIONAL_5      &trans  &trans                                                                        &kp QUESTION
             >;
-            sensor-bindings = <&inc_dec_kp LC(LS(LEFT_BRACKET)) LC(LS(RIGHT_BRACKET))>; // タブ切り替え
+
+            //sensor-bindings = <&inc_dec_kp LC(LS(LEFT_BRACKET)) LC(LS(RIGHT_BRACKET))>; // タブ切り替え
+            sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
         };
 
         mouse_arrow_ctrl {
