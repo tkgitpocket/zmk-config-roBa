@@ -155,7 +155,6 @@
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "mod-tap";
-        bindings = <&kp A>;
         mods = <(MOD_LCTL)>;
         tapping-term-ms = <300>;
         hold-tap-behavior = "tap-preferred";
@@ -166,7 +165,6 @@
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "mod-tap";
-        bindings = <&kp Z>;
         mods = <(MOD_LSFT)>;
         tapping-term-ms = <300>;
         hold-tap-behavior = "tap-preferred";
