@@ -15,6 +15,29 @@
 };
 
 / {
+    // Aキー用のカスタムビヘイビア（タップ時はA、ホールド時はCtrl）
+    custom_a_ctrl: custom_a_ctrl {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "mod-tap";
+        mods = <(MOD_LCTL)>;
+        tapping-term-ms = <300>;
+        hold-tap-behavior = "tap-preferred";
+    };
+
+    // Zキー用のカスタムビヘイビア（タップ時はZ、ホールド時はShift）
+    custom_z_shift: custom_z_shift {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <0>;
+        flavor = "mod-tap";
+        bindings = <&kp Z>;
+        mods = <(MOD_LSFT)>;
+        tapping-term-ms = <300>;
+        hold-tap-behavior = "tap-preferred";
+    };
+};
+
+/ {
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
