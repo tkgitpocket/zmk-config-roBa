@@ -153,6 +153,7 @@
     // Aキー用のカスタムビヘイビア（タップ時はA、ホールド時はCtrl）
     custom_a_ctrl: custom_a_ctrl_behavior {
         compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
         flavor = "mod-tap";
         bindings = <&kp A>;
         mods = <(MOD_LCTL)>;
@@ -163,6 +164,7 @@
     // Zキー用のカスタムビヘイビア（タップ時はZ、ホールド時はShift）
     custom_z_shift: custom_z_shift_behavior {
         compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
         flavor = "mod-tap";
         bindings = <&kp Z>;
         mods = <(MOD_LSFT)>;
@@ -197,8 +199,8 @@
         default_layer {
             bindings = <
 &kp Q             &kp W             &kp E      &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&custom_a_ctrl    &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
-&custom_z_shift   &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
+&custom_a_ctrl &kp A &none &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
+&custom_z_shift &kp Z &none &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
 &mt LEFT_WIN ESC  &mt LEFT_ALT TAB  &kp LCTRL  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp SLASH
             >;
 
