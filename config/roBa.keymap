@@ -180,7 +180,7 @@
         long_hold_mod_tap: long_hold_mod_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "LONG_HOLD_MOD_TAP";
-            bindings = <&mt>, <&kp>;
+            bindings = <&long_hold_mod_tap>, <&long_hold_mod_tap>;
 
             #binding-cells = <2>;
             tapping-term-ms = <400>;
