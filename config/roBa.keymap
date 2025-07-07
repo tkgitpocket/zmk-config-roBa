@@ -84,16 +84,6 @@
             key-positions = <12 13>;
         };
 
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
-
         mb4 {
             bindings = <&mkp MB4>;
             key-positions = <6 7>;
@@ -137,6 +127,11 @@
         plus {
             bindings = <&kp PLUS>;
             key-positions = <29 30>;
+        };
+
+        mb3 {
+            bindings = <&mkp MCLK>;
+            key-positions = <6 8 7>;
         };
     };
 
@@ -197,8 +192,8 @@
             bindings = <
 &kp Q                       &kp W             &kp E      &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
 &long_hold_mod_tap LCTRL A  &kp S             &kp D      &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
-&mt LEFT_SHIFT Z            &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp BACKSLASH
-&mt LEFT_WIN ESC            &mt LEFT_ALT TAB  &kp LCTRL  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp SLASH
+&mt LEFT_SHIFT Z            &kp X             &kp C      &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp SLASH
+&mt LEFT_WIN ESC            &mt LEFT_ALT TAB  &kp LCTRL  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp BACKSLASH
             >;
 
             //sensor-bindings = <&scroll_up_down>;
@@ -210,7 +205,7 @@
             bindings = <
 &kp EXCLAMATION     &kp DOUBLE_QUOTES  &kp HASH      &kp DOLLAR      &kp PERCENT                                       &kp AMPERSAND  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RS(BACKSLASH)
 &kp LCTRL           &kp SEMICOLON      &kp COLON     &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans                   &trans  &kp CARET      &kp AT_SIGN       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
-&mt LEFT_SHIFT TAB  &kp PLUS           &kp ASTERISK  &kp TILDE       &kp PRINTSCREEN  &trans                   &trans  &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp UNDERSCORE
+&mt LEFT_SHIFT TAB  &kp PLUS           &kp ASTERISK  &kp TILDE       &kp PRINTSCREEN  &trans                   &trans  &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp TILDE
 &mt LEFT_SHIFT ESC  &kp LEFT_WIN       &kp LCTRL     &trans          &kp SPACE        &kp INTERNATIONAL_5      &trans  &trans                                                                        &kp QUESTION
             >;
 
@@ -221,7 +216,7 @@
 
         mouse_arrow_ctrl {
             bindings = <
-&kp TAB         &kp LEFT_ALT  &kp END    &lt 6 SPACE  &kp ESC                                                     &kp LC(Y)      &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
+&kp TAB         &kp LEFT_ALT  &kp END    &lt 6 SPACE  &mo 5                                                       &kp LC(Y)      &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
 &mt LCTRL HOME  &kp LC(S)     &kp DEL    &kp RIGHT    &kp LEFT_SHIFT  &kp LC(LA(KP_NUMBER_0))      &kp PAGE_UP    &kp BACKSPACE  &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
 &kp LC(Z)       &kp LC(X)     &kp LC(C)  &kp LC(V)    &kp LEFT        &kp EQUAL                    &kp PAGE_DOWN  &kp DOWN       &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
 &trans          &trans        &trans     &trans       &trans          &trans                       &kp RCTRL      &kp ENTER                                       &kp RIGHT_SHIFT
@@ -248,7 +243,7 @@
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                      &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans      &trans  &kp F6        &kp F7        &kp F8        &kp F9        &kp UNDERSCORE
-&kp TAB       &kp F10       &kp F11       &kp F12       &kp SPACE     &trans      &trans  &kp PLUS      &kp ASTERISK  &kp COMMA     &kp DOT       &kp UNDERSCORE
+&kp TAB       &kp F10       &kp F11       &kp F12       &kp SPACE     &trans      &trans  &kp PLUS      &kp ASTERISK  &kp COMMA     &kp DOT       &kp QUESTION
 &trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans                                                  &kp QUESTION
             >;
 
