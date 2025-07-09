@@ -200,10 +200,10 @@
 
         default_layer {
             bindings = <
-&kp Q                              &kp W             &kp E         &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&long_hold_mod_tap LCTRL A         &kp S             &kp D         &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
-&medium_hold_mod_tap LEFT_SHIFT Z  &kp X             &kp C         &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp SLASH
-&kp ESC                            &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp BACKSLASH
+&kp Q                              &kp W             &kp E         &kp R                        &kp T                                                                                &kp Y              &kp U  &kp I      &kp O        &kp P
+&long_hold_mod_tap LCTRL A         &kp S             &kp D         &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA                       &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
+&medium_hold_mod_tap LEFT_SHIFT Z  &kp X             &kp C         &kp V                        &kp B             &kp LCTRL                          &kp DOT                         &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp SLASH
+&kp ESC                            &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL INT_KATAKANAHIRAGANA  &kp ENTER                                         &kp BACKSLASH
             >;
 
             //sensor-bindings = <&scroll_up_down>;
@@ -251,10 +251,10 @@
 
         num {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                      &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans      &trans  &kp F6        &kp F7        &kp F8        &kp F9        &kp UNDERSCORE
-&kp TAB       &kp F10       &kp F11       &kp F12       &kp SPACE     &trans      &trans  &kp PLUS      &kp ASTERISK  &kp COMMA     &kp DOT       &kp SLASH
-&trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans                                                  &kp QUESTION
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans      &trans            &kp F6        &kp F7        &kp F8        &kp F9        &kp UNDERSCORE
+&kp TAB       &kp F10       &kp F11       &kp F12       &kp SPACE     &trans      &trans            &kp PLUS      &kp ASTERISK  &kp COMMA     &kp DOT       &kp SLASH
+&trans        &trans        &trans        &trans        &trans        &trans      &kp INT_MUHENKAN  &trans                                                  &kp QUESTION
             >;
 
             sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
