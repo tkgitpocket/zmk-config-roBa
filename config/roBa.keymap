@@ -49,7 +49,7 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    tapping-term-ms = <300>;
+    tapping-term-ms = <200>;
 };
 
 &trackball {
@@ -183,6 +183,16 @@
             require-prior-idle-ms = <0>;
             flavor = "tap-preferred";
         };
+
+        medium_hold_mod_tap: medium_hold_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MEDIUM_HOLD_MOD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <350>;
+            flavor = "balanced";
+        };
     };
 
     keymap {
@@ -190,10 +200,10 @@
 
         default_layer {
             bindings = <
-&kp Q                            &kp W             &kp E         &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&long_hold_mod_tap LCTRL A       &kp S             &kp D         &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
-&long_hold_mod_tap LEFT_SHIFT Z  &kp X             &kp C         &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp SLASH
-&mt LEFT_SHIFT ESC               &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp BACKSLASH
+&kp Q                              &kp W             &kp E         &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
+&long_hold_mod_tap LCTRL A         &kp S             &kp D         &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp COMMA            &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
+&medium_hold_mod_tap LEFT_SHIFT Z  &kp X             &kp C         &kp V                        &kp B             &kp LCTRL                          &kp DOT              &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp SLASH
+&kp ESC                            &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &kp BACKSLASH
             >;
 
             //sensor-bindings = <&scroll_up_down>;
