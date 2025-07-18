@@ -190,7 +190,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
         };
     };
@@ -213,10 +213,10 @@
 
         symbol {
             bindings = <
-&kp EXCLAMATION     &kp DOUBLE_QUOTES  &kp HASH      &kp DOLLAR      &kp PERCENT                                          &kp AMPERSAND  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RS(BACKSLASH)
-&kp LCTRL           &kp SEMICOLON      &kp COLON     &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans                   &trans     &kp CARET      &kp AT_SIGN       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
-&mt LEFT_SHIFT TAB  &kp PLUS           &kp ASTERISK  &kp TILDE       &kp PRINTSCREEN  &trans                   &trans     &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp TILDE
-&trans              &trans             &trans        &trans          &kp SPACE        &kp INTERNATIONAL_5      &kp RCTRL  &trans                                                                        &kp QUESTION
+&kp EXCLAMATION     &kp DOUBLE_QUOTES  &kp HASH      &kp DOLLAR      &kp PERCENT                                             &kp AMPERSAND  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RS(BACKSLASH)
+&kp LCTRL           &kp SEMICOLON      &kp COLON     &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans                   &kp ASTERISK  &kp CARET      &kp AT_SIGN       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
+&mt LEFT_SHIFT TAB  &kp PLUS           &kp ASTERISK  &kp TILDE       &kp PRINTSCREEN  &trans                   &kp PLUS      &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp TILDE
+&trans              &trans             &trans        &trans          &kp SPACE        &kp INTERNATIONAL_5      &kp RCTRL     &trans                                                                        &kp QUESTION
             >;
 
             //sensor-bindings = <&inc_dec_kp LC(LS(LEFT_BRACKET)) LC(LS(RIGHT_BRACKET))>; // タブ切り替え
@@ -252,7 +252,7 @@
         num {
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                            &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans               &trans               &kp F6        &kp F7        &kp F8        &kp F9        &kp UNDERSCORE
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans               &kp GRAVE            &kp F6        &kp F7        &kp F8        &kp F9        &kp UNDERSCORE
 &kp TAB       &kp F10       &kp F11       &kp F12       &kp SPACE     &kp PRINTSCREEN      &trans               &kp PLUS      &kp ASTERISK  &kp COMMA     &kp DOT       &kp SLASH
 &trans        &trans        &trans        &trans        &trans        &trans               &kp INTERNATIONAL_4  &trans                                                  &kp QUESTION
             >;
