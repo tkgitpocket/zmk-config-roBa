@@ -3,13 +3,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-// ロータリーエンコーダでのスクロール
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
-
-// 【ZMK】OS設定を日本語キーボードのまま使う
-//    ref: https://note.com/kloir_z/n/n314e739f03a1
-// OS設定を日本語キーボードのまま使用するための変換定義
+//#define MOUSE 6
 
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
@@ -49,25 +45,6 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    tapping-term-ms = <200>;
-};
-
-&trackball {
-    //automouse-layer = <4>;
-
-    scroll-layers = <5>;
-
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
 };
 
 / {
@@ -100,12 +77,12 @@
         };
 
         colon {
-            bindings = <&kp COLON>;
+            bindings = <&kp JP_COLON>;
             key-positions = <19 20>;
         };
 
         underscore {
-            bindings = <&kp UNDERSCORE>;
+            bindings = <&kp JP_UNDERSCORE>;
             key-positions = <20 21>;
         };
 
@@ -120,12 +97,12 @@
         };
 
         asterisk {
-            bindings = <&kp ASTERISK>;
+            bindings = <&kp JP_ASTERISK>;
             key-positions = <17 18>;
         };
 
         plus {
-            bindings = <&kp PLUS>;
+            bindings = <&kp JP_PLUS>;
             key-positions = <29 30>;
         };
 
@@ -133,6 +110,126 @@
             bindings = <&mkp MCLK>;
             key-positions = <6 8 7>;
         };
+    };
+
+    mo2: mo2 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N2>, <&kp AT>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo6: mo6 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N6>, <&kp JP_CARET>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo7: mo7 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N7>, <&kp JP_AMPERSAND>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo8: mo8 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N8>, <&kp JP_ASTERISK>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo9: mo9 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N9>, <&kp LPAR>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    mo0: mo0 {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp N0>, <&kp LS(N9)>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moA: moA {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp MINUS>, <&kp JP_UNDERSCORE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moB: moB {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp JP_EQUAL>, <&kp JP_PLUS>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moC: moC {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp INT3>, <&kp JP_PIPE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moD: moD {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp LBKT>, <&kp LBRC>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moE: moE {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp JP_RBRACKET>, <&kp JP_RBRACE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moF: moF {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp SEMI>, <&kp JP_PLUS>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moG: moG {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp APOSTROPHE>, <&kp DQT>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moH: moH {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp JP_BSLH>, <&kp JP_TILDE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moI: moI {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp JP_BSLH>, <&kp JP_UNDERSCORE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     macros {
@@ -201,63 +298,45 @@
         default_layer {
             bindings = <
 &kp Q                            &kp W             &kp E         &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&long_hold_mod_tap LCTRL A       &kp S             &kp D         &kp F                        &mt LEFT_SHIFT G  &kp LS(LG(S))                      &kp UNDERSCORE       &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
-&long_hold_mod_tap LEFT_SHIFT Z  &kp X             &kp C         &kp V                        &kp B             &kp LCTRL                          &kp TILDE            &kp N              &kp M  &mkp LCLK  &mkp RCLK    &mt RIGHT_SHIFT SLASH
-&mt LEFT_SHIFT ESC               &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE       &lt_to_layer_0 3 INT_MUHENKAN      &mt RCTRL BACKSPACE  &kp ENTER                                         &mt RIGHT_SHIFT BACKSLASH
+&long_hold_mod_tap LCTRL A  &kp S             &kp D         &kp F             &kp G        &kp LS(LG(S))         &kp RCTRL    &mt RIGHT_SHIFT H  &kp J      &kp K      &mt RCTRL L  &lt 5 MINUS
+&long_hold_mod_tap LEFT_SHIFT Z             &kp X         &lt 6 C           &lt 5 V      &lt 4 B    &kp LEFT_SHIFT           &kp JP_TILDE &kp N              &kp M      &mkp LCLK  &mkp RCLK    &kp SLASH
+&mt LEFT_SHIFT ESC          &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt 1 INT_HENKAN  &lt 2 SPACE  &lt 3 INT_MUHENKAN                 &kp BACKSPACE      &kp ENTER                          &mt RIGHT_SHIFT NON_US_BACKSLASH
             >;
 
-            //sensor-bindings = <&scroll_up_down>;
-
-            sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&scroll_up_down>, <&scroll_up_down>;
         };
 
         symbol {
             bindings = <
-&kp EXCLAMATION     &kp DOUBLE_QUOTES  &kp HASH      &kp DOLLAR      &kp PERCENT                                             &kp AMPERSAND  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RS(BACKSLASH)
-&kp LCTRL           &kp SEMICOLON      &kp COLON     &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans                   &kp ASTERISK  &kp CARET      &kp AT_SIGN       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
-&mt LEFT_SHIFT TAB  &kp PLUS           &kp ASTERISK  &kp TILDE       &kp PRINTSCREEN  &trans                   &kp PLUS      &kp SEMICOLON  &kp COLON         &kp LESS_THAN         &kp GREATER_THAN       &kp TILDE
-&trans              &trans             &trans        &trans          &kp SPACE        &kp INTERNATIONAL_5      &kp RCTRL     &trans                                                                        &kp QUESTION
+&kp EXCLAMATION     &kp JP_DQUOTE       &kp HASH    &kp DOLLAR      &kp PERCENT                          &kp JP_AMPERSAND &kp JP_QUOTE   &kp JP_LPAREN &kp JP_RPAREN    &kp JP_PIPE
+&kp LCTRL           &kp SEMICOLON       &kp COLON   &kp JP_LBRACE   &kp JP_RBRACE  &trans                &kp JP_ASTERISK  &kp JP_CARET   &kp JP_AT     &kp JP_LBRACKET  &kp JP_RBRACKET    &kp JP_EQUAL
+&mt LEFT_SHIFT TAB  &kp JP_PLUS &kp JP_ASTERISK &kp JP_TILDE   &kp PRINTSCREEN     &mt LEFT_SHIFT TAB    &kp JP_PLUS      &kp SEMICOLON  &kp JP_COLON  &kp LESS_THAN    &kp GREATER_THAN   &kp JP_TILDE
+&trans              &trans              &trans      &trans          &trans         &lt 1 INT_MUHENKAN    &kp RCTRL        &kp ENTER                                                        &kp QUESTION
             >;
 
-            //sensor-bindings = <&inc_dec_kp LC(LS(LEFT_BRACKET)) LC(LS(RIGHT_BRACKET))>; // タブ切り替え
-
-            sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         mouse_arrow_ctrl {
             bindings = <
-&kp TAB         &kp LEFT_ALT  &kp END    &lt 6 SPACE  &mo 5                                                       &kp LC(Y)      &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
-&mt LCTRL HOME  &kp LC(S)     &kp DEL    &kp RIGHT    &kp LEFT_SHIFT  &kp LC(LA(KP_NUMBER_0))      &kp PAGE_UP    &kp BACKSPACE  &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
-&kp LC(Z)       &kp LC(X)     &kp LC(C)  &kp LC(V)    &kp LEFT        &kp EQUAL                    &kp PAGE_DOWN  &kp DOWN       &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
+&kp TAB         &kp LEFT_ALT  &kp END    &lt 6 SPACE      &mo 5                                            &kp RC(Y)       &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
+&kp HOME        &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT  &trans            &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
+&kp LC(Z)     &kp LC(X)  &kp LC(C)        &kp LC(V)       &kp LEFT_ARROW  &kp LEFT_SHIFT    &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
 &trans          &trans        &trans     &trans       &trans          &trans                       &kp RCTRL      &kp ENTER                                       &kp RIGHT_SHIFT
             >;
 
-            sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
-
-            //コンパイルエラー sensor-bindings = <&inc_dec_kp C_APP_PREV C_APP_NEXT>   // アプリケーション切り替え
-            //sensor-bindings = <&inc_dec_kp C_APP_GROUP_PREV C_APP_GROUP_NEXT>;  // アプリグループ切り替え
-            //コンパイルエラー sensor-bindings = <&inc_dec_kp C_WINDOW_PREV C_WINDOW_NEXT>;    // ウィンドウ切り替え
-            //sensor-bindings = <&inc_dec_kp C_WORKSPACE_PREV C_WORKSPACE_NEXT>;  // ワークスペース切り替え
-            //sensor-bindings = <&inc_dec_kp C_SLEEP C_SLEEP>;                    // スリープ
-            //sensor-bindings = <&inc_dec_kp C_SCREENSHOT C_SCREENSHOT>;          // スクリーンショット
-            //sensor-bindings = <&inc_dec_kp C_ZOOM_IN C_ZOOM_OUT>;               // ズームイン/アウト
-            //sensor-bindings = <&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>;     // Ctrl+左右矢印
-            //sensor-bindings = <&inc_dec_kp LS(LEFT_ARROW) LS(RIGHT_ARROW)>;     // Shift+左右矢印
-            //sensor-bindings = <&inc_dec_kp LA(LEFT_ARROW) LA(RIGHT_ARROW)>;     // Alt+左右矢印
-            //sensor-bindings = <&inc_dec_kp LC(LS(LEFT_BRACKET)) LC(LS(RIGHT_BRACKET))>; // タブ切り替え
-            //sensor-bindings = <&inc_dec_kp LC(UP_ARROW) LC(DOWN_ARROW)>;    // 行移動
-            //sensor-bindings = <&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>; // 単語移動
+            sensor-bindings = <&scroll_up_down>;
         };
 
         num {
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                            &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans               &kp GRAVE            &kp F6        &kp F7        &kp F8        &kp F9        &kp UNDERSCORE
-&kp TAB       &kp F10       &kp F11       &kp F12       &kp SPACE     &kp PRINTSCREEN      &trans               &kp PLUS      &kp ASTERISK  &kp COMMA     &kp DOT       &kp SLASH
-&trans        &trans        &trans        &trans        &trans        &trans               &kp INTERNATIONAL_4  &trans                                                  &kp QUESTION
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans    &kp RCTRL         &kp F6               &kp F7          &kp F8        &kp F9        &kp JP_UNDERSCORE
+&kp F10       &kp F11       &kp F12       &trans        &trans    &kp TAB       &kp JP_BACKQUOTE  &kp JP_PLUS          &kp JP_ASTERISK &kp COMMA     &kp PERIOD    &kp SLASH
+&trans        &trans        &trans        &trans        &trans        &trans                      &kp INTERNATIONAL_4  &kp ENTER                                   &kp QUESTION
             >;
 
-            sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         MOUSE {
@@ -282,11 +361,11 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        modifier_bt {
+        bt {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &kp LC(LA(DELETE))  &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader         &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans    &kp RA(RC(DEL))  &trans        &mkp MB1      &mkp MB3      &mkp MB2      &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &bootloader      &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans              &trans                                                  &bt BT_CLR_ALL
             >;
 
