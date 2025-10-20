@@ -310,7 +310,7 @@
             bindings = <
 &kp EXCLAMATION     &kp JP_DQUOTE       &kp HASH    &kp DOLLAR      &kp PERCENT                          &kp JP_AMPERSAND &kp JP_QUOTE   &kp JP_LPAREN &kp JP_RPAREN    &kp JP_PIPE
 &kp LCTRL           &kp SEMICOLON       &kp COLON   &kp JP_LBRACE   &kp JP_RBRACE  &trans                &kp JP_ASTERISK  &kp JP_CARET   &kp JP_AT     &kp JP_LBRACKET  &kp JP_RBRACKET    &kp JP_EQUAL
-&mt LEFT_SHIFT TAB  &kp JP_PLUS &kp JP_ASTERISK &kp JP_TILDE   &kp PRINTSCREEN     &mt LEFT_SHIFT TAB    &kp JP_PLUS      &kp SEMICOLON  &kp JP_COLON  &kp LESS_THAN    &kp GREATER_THAN   &kp JP_TILDE
+&mt LEFT_SHIFT TAB  &mt LEFT_SHIFT TAB  &kp JP_PLUS &kp JP_ASTERISK &kp JP_TILDE   &kp PRINTSCREEN       &kp JP_PLUS      &kp SEMICOLON  &kp JP_COLON  &kp LESS_THAN    &kp GREATER_THAN   &kp JP_TILDE
 &trans              &trans              &trans      &trans          &trans         &lt 1 INT_MUHENKAN    &kp RCTRL        &kp ENTER                                                        &kp QUESTION
             >;
 
@@ -321,7 +321,7 @@
             bindings = <
 &kp TAB         &kp LEFT_ALT  &kp END    &lt 6 SPACE      &mo 5                                            &kp RC(Y)       &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
 &kp HOME        &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT  &trans            &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
-&kp LC(Z)     &kp LC(X)  &kp LC(C)        &kp LC(V)       &kp LEFT_ARROW  &kp LEFT_SHIFT    &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
+&kp LEFT_SHIFT  &kp LC(Z)     &kp LC(X)  &kp LC(C)        &kp LC(V)       &kp LEFT_ARROW    &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
 &trans          &trans        &trans     &trans       &trans          &trans                       &kp RCTRL      &kp ENTER                                       &kp RIGHT_SHIFT
             >;
 
@@ -332,7 +332,7 @@
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                            &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans    &kp RCTRL         &kp F6               &kp F7          &kp F8        &kp F9        &kp JP_UNDERSCORE
-&kp F10       &kp F11       &kp F12       &trans        &trans    &kp TAB       &kp JP_BACKQUOTE  &kp JP_PLUS          &kp JP_ASTERISK &kp COMMA     &kp PERIOD    &kp SLASH
+&kp TAB       &kp F10       &kp F11       &kp F12       &trans        &trans    &kp JP_BACKQUOTE  &kp JP_PLUS          &kp JP_ASTERISK &kp COMMA     &kp PERIOD    &kp SLASH
 &trans        &trans        &trans        &trans        &trans        &trans                      &kp INTERNATIONAL_4  &kp ENTER                                   &kp QUESTION
             >;
 
