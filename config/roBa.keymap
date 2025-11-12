@@ -300,7 +300,7 @@
 &kp Q                            &kp W             &kp E         &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
 &long_hold_mod_tap LCTRL A  &kp S             &kp D         &kp F             &kp G        &kp LS(LG(S))         &kp RCTRL    &mt RIGHT_SHIFT H  &kp J      &kp K      &mt RCTRL L  &lt 5 MINUS
 &kp LEFT_SHIFT              &kp Z             &kp X         &lt 6 C           &lt 5 V      &lt 4 B               &kp JP_TILDE &kp N              &kp M      &mkp LCLK  &mkp RCLK    &kp SLASH
-&mt LEFT_SHIFT ESC          &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt 1 INT_HENKAN  &lt 2 SPACE  &lt 3 INT_MUHENKAN                 &kp BACKSPACE      &kp ENTER                          &mt RIGHT_SHIFT NON_US_BACKSLASH
+&mt LEFT_SHIFT ESC          &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt 1 INT_HENKAN  &lt 2 SPACE  &lt 3 INT_MUHENKAN                 &kp BACKSPACE      &kp ENTER                          &mt RIGHT_SHIFT JP_YEN
             >;
 
             sensor-bindings = <&scroll_up_down>, <&scroll_up_down>;
