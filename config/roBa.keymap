@@ -297,10 +297,10 @@
 
         default_layer {
             bindings = <
-&kp Q                            &kp W             &kp E         &kp R                        &kp T                                                                     &kp Y              &kp U  &kp I      &kp O        &kp P
-&kp A                           &kp S             &kp D         &kp F             &kp G        &kp LS(LG(S))         &kp RCTRL    &mt RIGHT_SHIFT H  &kp J      &kp K      &mt RCTRL L  &lt 5 MINUS
-&long_hold_mod_tap LEFT_SHIFT Z             &kp X         &lt 6 C           &lt 5 V      &lt 4 B    &kp LEFT_SHIFT           &kp JP_TILDE &kp N              &kp M      &mkp LCLK  &mkp RCLK    &kp SLASH
-&mt LEFT_SHIFT ESC          &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt 1 INT_HENKAN  &lt 2 SPACE  &lt 3 INT_MUHENKAN                 &kp BACKSPACE      &kp ENTER                          &mt RIGHT_SHIFT JP_YEN
+&kp Q                            &kp W             &kp E         &kp R                          &kp T                                  &kp Y              &kp U  &kp I      &kp O        &kp P
+&kp A                            &kp S             &kp D         &kp F             &kp G        &kp LS(LG(S))            &kp RCTRL     &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
+&long_hold_mod_tap LEFT_SHIFT Z  &kp X             &lt 6 C       &lt 5 V           &lt 4 B      &kp LEFT_SHIFT           &kp JP_TILDE  &kp N              &kp M  &mkp LCLK  &mkp RCLK    &kp SLASH
+&mt LEFT_SHIFT ESC               &mt LEFT_WIN TAB  &kp LEFT_ALT  &lt 1 INT_HENKAN  &lt 2 SPACE  &lt 3 INT_MUHENKAN       &kp BACKSPACE &kp ENTER                                         &mt RIGHT_GUI JP_YEN
             >;
 
             sensor-bindings = <&scroll_up_down>, <&scroll_up_down>;
@@ -308,10 +308,10 @@
 
         symbol {
             bindings = <
-&kp EXCLAMATION     &kp JP_DQUOTE       &kp HASH    &kp DOLLAR      &kp PERCENT                          &kp JP_AMPERSAND &kp JP_QUOTE   &kp JP_LPAREN &kp JP_RPAREN    &kp JP_PIPE
-&kp LCTRL           &kp SEMICOLON       &kp COLON   &kp JP_LBRACE   &kp JP_RBRACE  &trans                &kp JP_ASTERISK  &kp JP_CARET   &kp JP_AT     &kp JP_LBRACKET  &kp JP_RBRACKET    &kp JP_EQUAL
-&mt LEFT_SHIFT TAB  &kp JP_PLUS &kp JP_ASTERISK &kp JP_TILDE   &kp PRINTSCREEN     &mt LEFT_SHIFT TAB    &kp JP_PLUS      &kp SEMICOLON  &kp JP_COLON  &kp LESS_THAN    &kp GREATER_THAN   &kp JP_TILDE
-&trans              &trans              &trans      &trans          &trans         &lt 1 INT_MUHENKAN    &kp RCTRL        &kp ENTER                                                        &kp QUESTION
+&kp EXCLAMATION     &kp JP_DQUOTE       &kp HASH        &kp DOLLAR      &kp PERCENT                                             &kp JP_AMPERSAND &kp JP_QUOTE  &kp JP_LPAREN    &kp JP_RPAREN    &kp JP_PIPE
+&kp LCTRL           &kp SEMICOLON       &kp JP_COLON    &kp JP_LBRACE   &kp JP_RBRACE    &trans                &kp JP_ASTERISK  &kp JP_CARET     &kp JP_AT     &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_EQUAL
+&mt LEFT_SHIFT TAB  &kp JP_PLUS         &kp JP_ASTERISK &kp JP_TILDE    &kp PRINTSCREEN  &mt LEFT_SHIFT TAB    &kp JP_PLUS      &kp SEMICOLON    &kp JP_COLON  &kp LESS_THAN    &kp GREATER_THAN &kp JP_TILDE
+&trans              &trans              &trans          &trans          &trans           &lt 1 INT_MUHENKAN    &kp RCTRL        &kp ENTER                                                        &kp QUESTION
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -319,10 +319,10 @@
 
         mouse_arrow_ctrl {
             bindings = <
-&kp TAB         &kp LEFT_ALT  &kp END    &lt 6 SPACE      &mo 5                                            &kp RC(Y)       &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
-&kp HOME        &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT  &trans            &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
-&kp LC(Z)     &kp LC(X)  &kp LC(C)        &kp LC(V)       &kp LEFT_ARROW  &kp LEFT_SHIFT    &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
-&trans          &trans        &trans     &trans       &trans          &trans                       &kp RCTRL      &kp ENTER                                       &kp RIGHT_SHIFT
+&kp TAB       &kp LEFT_ALT  &kp END    &lt 6 SPACE      &mo 5                                            &kp RC(Y)       &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
+&kp HOME      &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT  &trans            &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
+&kp LC(Z)     &kp LC(X)     &kp LC(C)  &kp LC(V)        &kp LEFT_ARROW  &kp LEFT_SHIFT    &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
+&trans        &trans        &trans     &trans           &trans          &trans            &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -330,10 +330,10 @@
 
         num {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                            &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans    &kp RCTRL         &kp F6               &kp F7          &kp F8        &kp F9        &kp JP_UNDERSCORE
-&kp F10       &kp F11       &kp F12       &trans        &trans    &kp TAB       &kp JP_BACKQUOTE  &kp JP_PLUS          &kp JP_ASTERISK &kp COMMA     &kp PERIOD    &kp SLASH
-&trans        &trans        &trans        &trans        &trans        &trans                      &kp INTERNATIONAL_4  &kp ENTER                                   &kp QUESTION
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                         &kp NUMBER_6  &kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans            &kp RCTRL            &kp F6        &kp F7          &kp F8        &kp F9        &kp JP_UNDERSCORE
+&kp F10       &kp F11       &kp F12       &trans        &trans        &kp TAB           &kp JP_BACKQUOTE     &kp JP_PLUS   &kp JP_ASTERISK &kp COMMA     &kp PERIOD    &kp SLASH
+&trans        &trans        &trans        &trans        &trans        &trans            &kp INTERNATIONAL_4  &kp ENTER                                                 &kp QUESTION
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -363,10 +363,10 @@
 
         bt {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans  &trans    &kp RA(RC(DEL))  &trans        &mkp MB1      &mkp MB3      &mkp MB2      &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &bootloader      &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans              &trans                                                  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans      &kp RA(RC(DEL))  &trans        &mkp MB1      &mkp MB3      &mkp MB2      &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &bootloader      &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans           &trans                                                  &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&scroll_up_down>;
