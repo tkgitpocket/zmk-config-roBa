@@ -44,31 +44,29 @@
 #define SCROLL	5
 #define MODIFIER_BT	6
 
-/*
 // zmk-scroll-snap: 360° xy スクロールを最も近い軸にスナップ
-&trackball_listener {
-    scroller {
-        layers = <SCROLL>;
-        input-processors = <
-            &zip_xy_scaler 1 10
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_snap
-        >;
-    };
-};
+//&trackball_listener {
+//    scroller {
+//        layers = <SCROLL>;
+//        input-processors = <
+//            &zip_xy_scaler 1 10
+//            &zip_xy_to_scroll_mapper
+//            &zip_scroll_snap
+//        >;
+//    };
+//};
 
-&zip_scroll_snap {
-    x-threshold = <5 8>;
-    y-threshold = <8 5>;
-    xy-threshold = <5 8>;
-
-    require-n-samples = <10>;
-    immediate-snap-threshold = <1500>;
-    lock-duration-ms = <200>;
-    lock-for-next-n-events = <10>;
-    idle-reset-timeout-ms = <200>;
-};
-*/
+//&zip_scroll_snap {
+//    x-threshold = <5 8>;
+//    y-threshold = <8 5>;
+//    xy-threshold = <5 8>;
+//
+//    require-n-samples = <10>;
+//    immediate-snap-threshold = <1500>;
+//    lock-duration-ms = <200>;
+//    lock-for-next-n-events = <10>;
+//    idle-reset-timeout-ms = <200>;
+//};
 
 &mt {
     flavor = "balanced";
