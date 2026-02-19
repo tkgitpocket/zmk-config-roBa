@@ -2,8 +2,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <scroll-snap.dtsi>
-#include <input/processors.dtsi>
+#include <scroll-snap.dtsi> // scroll_snap用
+#include <input/processors.dtsi> // scroll_snap用
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
@@ -56,6 +56,9 @@
 //    };
 //};
 
+// スナップのパラメータがデフォルトでも、以下に設定しても使いづらかった
+// y軸がスムーズにスクロールできなくなる、反応しづらいしスクロール量も少ないので
+// roBaでは未使用にする
 //&zip_scroll_snap {
 //    x-threshold = <5 8>;
 //    y-threshold = <8 5>;
