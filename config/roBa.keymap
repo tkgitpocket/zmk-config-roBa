@@ -44,6 +44,7 @@
 #define SCROLL	5
 #define MODIFIER_BT	6
 
+/*
 // zmk-scroll-snap: 360° xy スクロールを最も近い軸にスナップ
 &trackball_listener {
     scroller {
@@ -67,6 +68,7 @@
     lock-for-next-n-events = <10>;
     idle-reset-timeout-ms = <200>;
 };
+*/
 
 &mt {
     flavor = "balanced";
