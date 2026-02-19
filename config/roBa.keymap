@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <scroll-snap.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
@@ -41,6 +42,17 @@
 #define MOUSE	4
 #define SCROLL	5
 #define MODIFIER_BT	6
+
+// zmk-scroll-snap: 360° xy スクロールを最も近い軸にスナップ
+&trackball_listener {
+    scroller {
+        layers = <SCROLL>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_snap
+        >;
+    };
+};
 
 &mt {
     flavor = "balanced";
