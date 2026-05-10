@@ -118,7 +118,7 @@
 
         lctrl {
             bindings = <&kt LCTRL>;
-            key-positions = <10 11>;
+            key-positions = <10 11 12>;
         };
     };
 
