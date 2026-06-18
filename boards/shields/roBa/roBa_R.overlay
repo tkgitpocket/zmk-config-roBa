@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -14,12 +15,28 @@
             ;
 };
 
-/ {
-    trackball_listener {
-        status = "okay";
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
+// タイピング後 300ms 以内はオートマウスレイヤーを起動しない
+&zip_temp_layer {
+    require-prior-idle-ms = <300>;
+};
 
+&trackball_listener {
+    status = "okay";
+    device = <&trackball>;
+
+    // ベース: MOUSE_L(4) を自動起動 → 起動しなかった場合はカーソル移動を抑制
+    input-processors = <&zip_temp_layer 4 800>, <&zip_xy_scaler 0 1>;
+
+    // MOUSE_L が有効なとき: 通常のカーソル移動を許可（ベースをスキップ）
+    mouse_active {
+        layers = <4>;
+        input-processors = <&zip_xy_scaler 1 1>;
+    };
+
+    // MOUSE_CTRL_L(2) が有効なとき: Spaceホールドでの使用のため移動を許可
+    mouse_ctrl_active {
+        layers = <2>;
+        input-processors = <&zip_xy_scaler 1 1>;
     };
 };
 
