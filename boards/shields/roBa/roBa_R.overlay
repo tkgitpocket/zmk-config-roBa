@@ -15,17 +15,19 @@
             ;
 };
 
-// タイピング後 300ms 以内はオートマウスレイヤーを起動しない
+// タイピング後 300ms 以内は AML を起動しない
+// クリックボタンを押しても AML を維持する位置: MB4(6) MB3(7) MB5(8) LCLK(18,19,31) RCLK(20,32)
 &zip_temp_layer {
     require-prior-idle-ms = <300>;
+    excluded-positions = <6 7 8 18 19 20 31 32>;
 };
 
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
 
-    // ベース: MOUSE_L(4) を自動起動 → 起動しなかった場合はカーソル移動を抑制
-    input-processors = <&zip_temp_layer 4 800>, <&zip_xy_scaler 0 1>;
+    // ベース: MOUSE_L(4) を自動起動(10秒間有効) → 未起動時はカーソル移動を抑制
+    input-processors = <&zip_temp_layer 4 10000>, <&zip_xy_scaler 0 1>;
 
     // MOUSE_L が有効なとき: 通常のカーソル移動を許可（ベースをスキップ）
     mouse_active {
