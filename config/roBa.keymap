@@ -375,10 +375,10 @@
 
         mouse_arrow_ctrl {
             bindings = <
-&kp TAB    &kp LEFT_ALT  &kp END    &lt 6 SPACE      &mo 5                                              &kp RC(Y)       &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
-&kp HOME   &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT  &trans              &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
-&kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)        &kp LEFT_ARROW  &kp LEFT_SHIFT      &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
-&trans     &trans        &trans     &trans           &trans          &trans              &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
+&kp TAB    &kp LEFT_ALT  &kp END    &lt 6 SPACE      &kp PRINTSCREEN                             &kp RC(Y)       &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
+&kp HOME   &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT   &trans      &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
+&kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)        &kp LEFT_ARROW   &mo 10      &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
+&trans     &trans        &trans     &trans           &trans           &trans      &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -386,10 +386,10 @@
 
         num {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans       &kp RCTRL            &kp F6        &kp F7        &kp F8        &kp F9        &kp UNDERSCORE
-&kp F10       &kp F11       &kp F12       &trans        &trans        &kp TAB      &kp CARET            &kp PLUS      &kp ASTERISK  &kp COMMA     &kp PERIOD    &kp SLASH
-&trans        &trans        &trans        &trans        &trans        &trans       &kp INTERNATIONAL_4  &kp ENTER                                               &kp QUESTION
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                   &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans      &kp RCTRL            &kp F6        &kp F7        &kp F8        &kp F9        &kp UNDERSCORE
+&kp F10       &kp F11       &kp F12       &trans        &trans        &mo 11      &kp CARET            &kp PLUS      &kp ASTERISK  &kp COMMA     &kp PERIOD    &kp SLASH
+&trans        &trans        &trans        &trans        &trans        &trans      &kp INTERNATIONAL_4  &kp ENTER                                               &kp QUESTION
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -443,7 +443,7 @@
         center2_layer {
             display-name = "Center SPACE (Apple)";
             bindings = <
-&kp TAB       &kp LEFT_ALT  &kp LG(RIGHT)  &lt 6 SPACE      &mo 5                                              &kp LG(LS(Z))   &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
+&kp TAB       &kp LEFT_ALT  &kp LG(RIGHT)  &lt 6 SPACE      &kp LS(LG(N5))                                     &kp LG(LS(Z))   &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
 &kp LG(LEFT)  &kp LG(S)     &kp DEL        &kp RIGHT_ARROW  &kp LEFT_SHIFT  &trans              &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
 &kp LG(Z)     &kp LG(X)     &kp LG(C)      &kp LG(V)        &kp LEFT_ARROW  &kp LEFT_SHIFT      &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
 &trans        &trans        &trans         &trans           &trans          &trans              &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
