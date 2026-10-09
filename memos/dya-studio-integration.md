@@ -23,10 +23,10 @@
 - `kumamuk-git/zmk-pmw3610-driver` → `cormoran/zmk-driver-pmw3610-with-custom-studio-rpc`（`config/west.yml`）。
 - `roBa_R.overlay`: `compatible = "cormoran,pmw3610"`、`cpi = <400>`、`evt-type` / `x-input-code` / `y-input-code`、`settings-id = "trackball"` を追加。`scroll-layers` は新ドライバに無いため削除。
 - `roBa_R.conf`: 旧ドライバ専用のKconfig（`CPI_DIVIDOR` / `ORIENTATION_*` / `SCROLL_TICK` / `INVERT_SCROLL_X` / `POLLING_RATE_125_SW` / `AUTOMOUSE_TIMEOUT_MS` / `MOVEMENT_THRESHOLD` ほか）を削除し、新ドライバ向けに以下を設定。
-  - `PMW3610_INVERT_Y=y`、`PMW3610_REPORT_INTERVAL_MIN=12`、`PMW3610_INIT_POWER_UP_EXTRA_DELAY_MS=200`
+  - `PMW3610_INVERT_X=y`（実機でXY両方反転していたためINVERT_Yから変更）、`PMW3610_REPORT_INTERVAL_MIN=12`、`PMW3610_INIT_POWER_UP_EXTRA_DELAY_MS=200`
   - `PMW3610_RUN_DOWNSHIFT_TIME_MS=3264`、`PMW3610_REST1_SAMPLE_TIME_MS=20`、`PMW3610_SMART_ALGORITHM=y`
   - `ZMK_PMW3610_CUSTOM_SETTINGS=y`（DYA Studioからセンサー設定を変更可能）
-  - `ZMK_PMW3610_STUDIO_RPC` は `ZMK_STUDIO_RPC_TX_BUF_SIZE` 不足のstatic assertでビルドが通らないため無効。
+  - `ZMK_PMW3610_STUDIO_RPC=y` と `ZMK_PMW3610_SPLIT_RPC_RELAY=y`（§8のバッファ拡張とセット。単独だとTXバッファ不足でビルドエラーになる）
 
 ### スクロールの実装変更（要実機確認）
 
@@ -94,3 +94,12 @@ DYA Studioでランタイム定義できるため、`combos { ... }` ノード�
 
 - 4系はZMK本家の `zmk-layout-shift v2` などの外部モジュールとの互換が未確認の箇所がある（ビルドは成功）。実機でJIS変換が効くか確認すること。
 - AML（`zip_temp_layer`）やBTプロファイル自動レイヤー切替は4系でもビルドは通っているが、実機での挙動は要確認。
+
+## 8. 安定化設定（dya-dash に合わせた追加）
+
+トラボ設定画面・マクロ/コンボ画面でフリーズしたため、安定動作している [zmk-keyboard-dya-dash](https://github.com/cormoran/zmk-keyboard-dya-dash) の `dya_dash_right.conf` / `dya_dash_left.conf` に合わせた。
+
+- バッファ/スタック拡張（right）: `ZMK_STUDIO_RPC_RX/TX_BUF_SIZE=256`、`..._CUSTOM_SUBSYSTEM_REQUEST_PAYLOAD_MAX_BYTES=256`、`ZMK_SPLIT_RELAY_EVENT_DATA_LEN=240`、`SYSTEM_WORKQUEUE_STACK_SIZE=4096`、`ZMK_STUDIO_RPC_THREAD_STACK_SIZE=6000`、`ZMK_LOW_PRIORITY_THREAD_STACK_SIZE=4096`（left は 2048）
+- `ZMK_CUSTOM_SETTINGS(_STUDIO_RPC)`、`ZMK_BEHAVIOR_LOCAL_ID_TYPE_CRC16` / `ZMK_BEHAVIOR_LOCAL_IDS_IN_BINDINGS`（ランタイムmacro/comboのビヘイビア参照用）
+- 追加モジュール: `zmk-feature-fast-keymap`、`zmk-feature-watchdog`（フリーズ時の自動復帰）、`zmk-feature-module-physical-layout`
+- `CONFIG_CONSOLE=n`、`BOARD_SERIAL_BACKEND_CDC_ACM=n`
