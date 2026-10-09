@@ -1,6 +1,16 @@
 #include "roBa.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/input_transform.h>
+
+// ボールのXY移動をスクロールに変換する処理チェーン。ZMK 4系移行でドライバの
+// scroll-layers が使えなくなったため、スクロール層ではprocessorで変換する。
+// 旧ドライバ(SCROLL_TICK=16)の感度に合わせ 1/16 を標準とし、Y反転で自然なスクロール方向にする。
+#define SCROLL_CHAIN(mul, div) \
+    <&zip_xy_to_scroll_mapper>, \
+    <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>, \
+    <&zip_scroll_scaler mul div>, \
+    <&trackball_scroll_rip>
 
 / {
     // DYA Studio: カーソル速度のランタイム調整(既定1/1=補正なしで既存の挙動は不変)
@@ -58,7 +68,13 @@
     device = <&trackball>;
 
     // ベース: MOUSE_L(4) を自動起動(10秒間有効) → 未起動時はカーソル移動を抑制
-    input-processors = <&zip_temp_layer 4 10000>, <&zip_xy_scaler 0 1>, <&trackball_speed_rip>, <&trackball_scroll_rip>;
+    input-processors = <&zip_temp_layer 4 10000>, <&zip_xy_scaler 0 1>, <&trackball_speed_rip>;
+
+    // SCROLL_L(5) が有効なとき: ボール移動をスクロールに変換(標準速度)
+    scroll_active {
+        layers = <5>;
+        input-processors = SCROLL_CHAIN(1, 16);
+    };
 
     // MOUSE_L が有効なとき: 通常のカーソル移動を許可（ベースをスキップ）
     mouse_active {
@@ -83,14 +99,14 @@
     // torabo-tsuki-lpの標準比(1/8 ÷ 1/4 = 1/2)に合わせた比率)
     slow_scroll {
         layers = <10>;
-        input-processors = <&zip_scroll_scaler 1 2>, <&trackball_scroll_rip>;
+        input-processors = SCROLL_CHAIN(1, 32);
     };
 
     // FASTRSCROLL_L(11) が有効なとき: スクロールを高速化(標準の6倍。
     // torabo-tsuki-lpの標準比(3/2 ÷ 1/4 = 6倍)に合わせた比率)
     fast_scroll {
         layers = <11>;
-        input-processors = <&zip_scroll_scaler 6 1>, <&trackball_scroll_rip>;
+        input-processors = SCROLL_CHAIN(3, 8);
     };
 };
 
@@ -125,16 +141,14 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
+        compatible = "cormoran,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-//        automouse-layer = <6>;
-//        automouse-layer = <4>;
-        // SCROLL_L(5)に加え、SLOWSCROLL_L(10)/FASTRSCROLL_L(11)でもセンサーを
-        // スクロール報告モードにする(速度自体は trackball_listener 側の
-        // zip_scroll_scaler で調整する)
-        scroll-layers = <5 10 11>;
-
+        cpi = <400>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        settings-id = "trackball";
     };
 };

@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: kumamuk-git
-      url-base: https://github.com/kumamuk-git
     - name: kot149
       url-base: https://github.com/kot149
     - name: cormoran
@@ -14,8 +12,8 @@ manifest:
       remote: cormoran
       revision: main+dya
       import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: kumamuk-git
+    - name: zmk-driver-pmw3610-with-custom-studio-rpc
+      remote: cormoran
       revision: main
     - name: zmk-layout-shift
       remote: kot149
