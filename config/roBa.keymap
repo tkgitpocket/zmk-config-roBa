@@ -419,10 +419,10 @@
 
         bt {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                               &out_bt_0  &out_bt_1  &out_bt_2  &out_bt_3  &out_bt_4
-&trans  &trans  &trans  &trans  &trans  &trans      &kp RA(RC(DEL))  &trans     &trans     &trans     &trans     &tog_ls_on
-&trans  &trans  &trans  &trans  &trans  &trans      &bootloader      &trans     &trans     &trans     &trans     &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans           &trans                                      &bt BT_CLR_ALL
+&trans          &trans  &trans  &trans  &trans                                       &out_bt_0  &out_bt_1  &out_bt_2  &out_bt_3  &out_bt_4
+&trans          &trans  &trans  &trans  &trans  &trans              &kp RA(RC(DEL))  &trans     &trans     &trans     &trans     &tog_ls_on
+&studio_unlock  &trans  &trans  &trans  &trans  &studio_unlock      &bootloader      &trans     &trans     &trans     &trans     &bt BT_CLR
+&trans          &trans  &trans  &trans  &trans  &trans              &trans           &trans                                      &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&scroll_up_down>;
