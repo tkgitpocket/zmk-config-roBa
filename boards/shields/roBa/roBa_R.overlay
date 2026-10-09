@@ -1,5 +1,36 @@
 #include "roBa.dtsi"
 #include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    // DYA Studio: カーソル速度のランタイム調整(既定1/1=補正なしで既存の挙動は不変)
+    trackball_speed_rip: trackball_speed_rip {
+        compatible = "zmk,input-processor-runtime";
+        processor-label = "tball"; // 名前長制限(既定8文字)のため短縮
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+        scale-multiplier = <1>;
+        scale-divisor = <1>;
+        rotation-degrees = <0>;
+        track-remainders;
+        #input-processor-cells = <0>;
+    };
+
+    // DYA Studio: スクロール速度のランタイム調整(既定1/1=補正なし)
+    trackball_scroll_rip: trackball_scroll_rip {
+        compatible = "zmk,input-processor-runtime";
+        processor-label = "tscroll";
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_HWHEEL>;
+        y-codes = <INPUT_REL_WHEEL>;
+        scale-multiplier = <1>;
+        scale-divisor = <1>;
+        rotation-degrees = <0>;
+        track-remainders;
+        #input-processor-cells = <0>;
+    };
+};
 
 &default_transform {
     col-offset = <6>;
@@ -27,39 +58,39 @@
     device = <&trackball>;
 
     // ベース: MOUSE_L(4) を自動起動(10秒間有効) → 未起動時はカーソル移動を抑制
-    input-processors = <&zip_temp_layer 4 10000>, <&zip_xy_scaler 0 1>;
+    input-processors = <&zip_temp_layer 4 10000>, <&zip_xy_scaler 0 1>, <&trackball_speed_rip>, <&trackball_scroll_rip>;
 
     // MOUSE_L が有効なとき: 通常のカーソル移動を許可（ベースをスキップ）
     mouse_active {
         layers = <4>;
-        input-processors = <&zip_xy_scaler 1 1>;
+        input-processors = <&zip_xy_scaler 1 1>, <&trackball_speed_rip>;
     };
 
     // MOUSE_CTRL_L(2) が有効なとき: Spaceホールドでの使用のため移動を許可
     mouse_ctrl_active {
         layers = <2>;
-        input-processors = <&zip_xy_scaler 1 1>;
+        input-processors = <&zip_xy_scaler 1 1>, <&trackball_speed_rip>;
     };
 
     // SLOWTRACKBALL_L(9) が有効なとき: カーソル移動を低速化(標準の1/3。
     // torabo-tsuki-lpの標準比(1/6 ÷ 1/2 = 1/3)に合わせた比率)
     slow_cursor {
         layers = <9>;
-        input-processors = <&zip_xy_scaler 1 3>;
+        input-processors = <&zip_xy_scaler 1 3>, <&trackball_speed_rip>;
     };
 
     // SLOWSCROLL_L(10) が有効なとき: スクロールを低速化(標準の1/2。
     // torabo-tsuki-lpの標準比(1/8 ÷ 1/4 = 1/2)に合わせた比率)
     slow_scroll {
         layers = <10>;
-        input-processors = <&zip_scroll_scaler 1 2>;
+        input-processors = <&zip_scroll_scaler 1 2>, <&trackball_scroll_rip>;
     };
 
     // FASTRSCROLL_L(11) が有効なとき: スクロールを高速化(標準の6倍。
     // torabo-tsuki-lpの標準比(3/2 ÷ 1/4 = 6倍)に合わせた比率)
     fast_scroll {
         layers = <11>;
-        input-processors = <&zip_scroll_scaler 6 1>;
+        input-processors = <&zip_scroll_scaler 6 1>, <&trackball_scroll_rip>;
     };
 };
 
