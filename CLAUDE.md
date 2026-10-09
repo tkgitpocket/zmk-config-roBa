@@ -14,14 +14,14 @@ roBa標準（[kumamuk-git/zmk-config-roBa](https://github.com/kumamuk-git/zmk-co
 
 ```yaml
 # .github/workflows/build.yml
-uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3-branch
+uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 ```
 
 [build.yaml](build.yaml) のビルドマトリクスは3つの成果物を生成する:
 
-- `seeeduino_xiao_ble` + `roBa_R`（`studio-rpc-usb-uart` スニペット付き）— 右手側（central）
-- `seeeduino_xiao_ble` + `roBa_L` — 左手側（peripheral）
-- `seeeduino_xiao_ble` + `settings_reset` — BLEボンド情報リセット用
+- `xiao_ble//zmk` + `roBa_R`（`studio-rpc-usb-uart` スニペット付き）— 右手側（central）
+- `xiao_ble//zmk` + `roBa_L` — 左手側（peripheral）
+- `xiao_ble//zmk` + `settings_reset` — BLEボンド情報リセット用
 
 キーマップ可視化SVGを再生成するには、GitHub Actionsで **Draw Keymap** ワークフローを手動実行する。`config/*.keymap` を読み込み、`keymap-drawer/` に出力する。
 
@@ -32,7 +32,7 @@ uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3-branch
 | ファイル | 役割 |
 |------|---------|
 | [config/roBa.keymap](config/roBa.keymap) | キーマップ全体: レイヤー・コンボ・ビヘイビア・マクロ |
-| [config/west.yml](config/west.yml) | ZMK依存関係マニフェスト（zmk v0.3-branch、pmw3610ドライバ、zmk-layout-shift v2） |
+| [config/west.yml](config/west.yml) | ZMK依存関係マニフェスト（cormoran/zmk main+dya = ZMK 4系、cormoran版pmw3610ドライバ、DYA Studioモジュール、zmk-layout-shift v2） |
 | [boards/shields/roBa/roBa.dtsi](boards/shields/roBa/roBa.dtsi) | 共通ハードウェア定義: kscanマトリクス（4行×11列）、エンコーダー、トラックボールリスナー |
 | [boards/shields/roBa/roBa_L.overlay](boards/shields/roBa/roBa_L.overlay) | 左手側: col-gpios 6本、エンコーダー有効 |
 | [boards/shields/roBa/roBa_R.overlay](boards/shields/roBa/roBa_R.overlay) | 右手側: col-gpios 5本、col-offset=6、SPI経由のPMW3610トラックボール |
@@ -82,3 +82,7 @@ BTプロファイル選択マクロ（`out_bt_0`〜`out_bt_4`）は、プロフ�
 - `scroll_up_down` / `mouse_scroll` — エンコーダーのスクロールホイール割り当て
 - `mo2`–`moI` — シフト時に記号が変化するmod-morphビヘイビア群
 - `out_bt_0`–`out_bt_4` — BTプロファイル選択時に他プロファイルを切断・接続安定化し、あわせてOSに応じたデフォルトレイヤーへ切り替えるマクロ（[memos/bt-profile-auto-disconnect.md](memos/bt-profile-auto-disconnect.md) 参照）
+
+### DYA Studio / ZMK 4系
+
+`dya-studio-level2` ブランチではDYA Studio Level 2に対応し、ZMK 4系（cormoran/zmk `main+dya`）へ移行している。トラックボールのスクロールは `roBa_R.overlay` の `SCROLL_CHAIN`（processor）で実現し、静的コンボは削除済み（DYA Studioで定義）。詳細は [memos/dya-studio-integration.md](memos/dya-studio-integration.md) 参照。
