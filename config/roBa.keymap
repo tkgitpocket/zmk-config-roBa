@@ -243,7 +243,6 @@
 
             tap-ms = <20>;
         };
-        };
 
         mouse_scroll: mouse_wheel_scrl {
             compatible = "zmk,behavior-sensor-rotate-var";
