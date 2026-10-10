@@ -278,6 +278,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            display-name = "0:default layer";
             bindings = <
 &kp Q                            &kp W             &kp E         &kp R             &kp T                                               &kp Y              &kp U  &kp I      &lt 10 O     &lt 11 P
 &kp A                            &kp S             &kp D         &kp F             &kp G        &kp LS(LG(S))           &kp RCTRL      &mt RIGHT_SHIFT H  &kp J  &kp K      &mt RCTRL L  &lt 5 MINUS
@@ -289,6 +290,7 @@
         };
 
         symbol {
+            display-name = "1:(left)symbol layer";
             bindings = <
 &kp EXCLAMATION     &kp DOUBLE_QUOTES  &kp HASH      &kp DOLLAR      &kp PERCENT                                            &kp AMPERSAND  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
 &kp LCTRL           &kp SEMICOLON      &kp COLON     &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans                  &kp ASTERISK  &kp CARET      &kp AT            &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EQUAL
@@ -300,6 +302,7 @@
         };
 
         mouse_arrow_ctrl {
+            display-name = "2:(center)move & shortcut layer";
             bindings = <
 &kp TAB    &kp LEFT_ALT  &kp END    &lt 6 SPACE      &kp PRINTSCREEN                             &kp RC(Y)       &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
 &kp HOME   &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT   &trans      &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
@@ -311,6 +314,7 @@
         };
 
         num {
+            display-name = "3:(right)number layer";
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                   &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &trans      &kp RCTRL            &kp F6        &kp F7        &kp F8        &kp F9        &kp UNDERSCORE
@@ -322,6 +326,7 @@
         };
 
         MOUSE {
+            display-name = "4:mouse layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB4   &mkp MB3   &mkp MB5   &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mkp LCLK  &mkp RCLK  &trans
@@ -333,6 +338,7 @@
         };
 
         SCROLL {
+            display-name = "5:scroll layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
@@ -344,6 +350,7 @@
         };
 
         bt {
+            display-name = "6:bluetooth & config layer";
             bindings = <
 &trans          &trans  &trans  &trans  &trans                                       &out_bt_0  &out_bt_1  &out_bt_2  &out_bt_3  &out_bt_4
 &trans          &trans  &trans  &trans  &trans  &trans              &kp RA(RC(DEL))  &trans     &trans     &trans     &trans     &tog_ls_on
@@ -355,7 +362,7 @@
         };
 
         apple_default_layer {
-            display-name = "Apple Default";
+            display-name = "7:apple default layer";
             bindings = <
 &trans  &trans  &trans        &trans            &trans                                     &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans        &trans            &trans       &trans                &trans  &trans  &trans  &trans  &trans  &trans
@@ -367,7 +374,7 @@
         };
 
         center2_layer {
-            display-name = "Center SPACE (Apple)";
+            display-name = "8:(center)move & shortcut layer for Apple";
             bindings = <
 &kp TAB       &kp LEFT_ALT  &kp LG(RIGHT)  &lt 6 SPACE      &kp LS(LG(N5))                                     &kp LG(LS(Z))   &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
 &kp LG(LEFT)  &kp LG(S)     &kp DEL        &kp RIGHT_ARROW  &kp LEFT_SHIFT  &trans              &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
@@ -379,7 +386,7 @@
         };
 
         slow_trackball_layer {
-            display-name = "Slow Trackball";
+            display-name = "9:slow trackball layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB4   &mkp MB3   &mkp MB5   &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mkp LCLK  &mkp RCLK  &trans
@@ -391,7 +398,7 @@
         };
 
         slow_scroll_layer {
-            display-name = "Slow Scroll";
+            display-name = "10:slow scroll layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
@@ -403,7 +410,7 @@
         };
 
         fast_scroll_layer {
-            display-name = "Fast Scroll";
+            display-name = "11:fast scroll layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
