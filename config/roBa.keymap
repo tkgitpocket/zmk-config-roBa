@@ -314,7 +314,7 @@
 &kp TAB    &kp LEFT_ALT  &kp END    &lt_hp 6 SPACE      &kp PRINTSCREEN                             &kp RC(Y)       &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
 &kp HOME   &kp LC(S)     &kp DEL    &kp RIGHT_ARROW  &kp LEFT_SHIFT   &trans      &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
 &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)        &kp LEFT_ARROW   &mo 10      &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
-&trans     &trans        &studio_unlock &trans           &trans           &trans      &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
+&trans     &trans        &trans     &trans           &trans           &trans      &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -382,7 +382,7 @@
 &kp TAB       &kp LEFT_ALT  &kp LG(RIGHT)  &lt_hp 6 SPACE      &kp LS(LG(N5))                                     &kp LG(LS(Z))   &mkp MB4   &mkp MB3   &mkp MB5   &kp UP_ARROW
 &kp LG(LEFT)  &kp LG(S)     &kp DEL        &kp RIGHT_ARROW  &kp LEFT_SHIFT  &trans              &kp PAGE_UP    &kp BACKSPACE   &mkp LCLK  &mkp LCLK  &mkp RCLK  &mo 5
 &kp LG(Z)     &kp LG(X)     &kp LG(C)      &kp LG(V)        &kp LEFT_ARROW  &kp LEFT_SHIFT      &kp PAGE_DOWN  &kp DOWN_ARROW  &trans     &mkp LCLK  &mkp RCLK  &kp ENTER
-&trans        &trans        &studio_unlock &trans           &trans          &trans              &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
+&trans        &trans        &trans         &trans           &trans          &trans              &kp RCTRL      &kp ENTER                                        &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&scroll_up_down>;

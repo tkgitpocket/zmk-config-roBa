@@ -111,7 +111,3 @@ DYA Studioでランタイム定義できるため、`combos { ... }` ノード�
 対処: `lt_hp`（hold-preferred、200ms）を追加し、レイヤー2・8の `&lt 6 SPACE` だけをこれに置換。他キーを押した時点で即ホールド確定になる。
 
 使い方: Space位置（`&lt 2 SPACE`）を押したまま、レイヤー2の `&lt_hp 6 SPACE`（デフォルトレイヤーのRの位置）を押したままにし、Z位置の `&studio_unlock` を押す。
-
-### 追記: レイヤー6を経由しない `&studio_unlock`
-
-1秒以上ホールドしてもレイヤー6に入れず Ctrl+Z になる報告があったため、レイヤー2（MOUSE_CTRL_L）とレイヤー8（CENTER2_L）の最下段左から3番目（デフォルトレイヤーのLeft Alt位置、元は `&trans`）にも `&studio_unlock` を追加した。Spaceホールド（レイヤー2）の状態でそのキーを押せばアンロックできる。
