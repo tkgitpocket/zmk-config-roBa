@@ -54,5 +54,8 @@ manifest:
     - name: zmk-feature-watchdog
       remote: cormoran
       revision: main
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
+      revision: feat/custom-settings-storage
   self:
     path: config

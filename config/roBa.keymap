@@ -1,5 +1,6 @@
 #include <layout_shift.dtsi>
 #include <behaviors.dtsi>
+#include <behaviors/runtime-sensor-rotate.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -233,12 +234,15 @@
             tapping-term-ms = <200>;
         };
 
+        // エンコーダー: DYA Studioからレイヤー別に割り当て変更可能(未設定時はこの既定値=スクロール)
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            cw-binding = <&msc SCRL_DOWN>;
+            ccw-binding = <&msc SCRL_UP>;
 
             tap-ms = <20>;
+        };
         };
 
         mouse_scroll: mouse_wheel_scrl {
