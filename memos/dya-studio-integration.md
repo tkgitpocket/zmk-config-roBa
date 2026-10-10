@@ -103,3 +103,7 @@ DYA Studioでランタイム定義できるため、`combos { ... }` ノード�
 - `ZMK_CUSTOM_SETTINGS(_STUDIO_RPC)`、`ZMK_BEHAVIOR_LOCAL_ID_TYPE_CRC16` / `ZMK_BEHAVIOR_LOCAL_IDS_IN_BINDINGS`（ランタイムmacro/comboのビヘイビア参照用）
 - 追加モジュール: `zmk-feature-fast-keymap`、`zmk-feature-watchdog`（フリーズ時の自動復帰）、`zmk-feature-module-physical-layout`
 - `CONFIG_CONSOLE=n`、`BOARD_SERIAL_BACKEND_CDC_ACM=n`
+
+## 9. studio_unlockが効かない問題の結論
+
+レイヤー6の `&studio_unlock` が効かない（Ctrl+Zになる）問題は、`settings_reset` ファームを両側に書いてから通常ファームを書き直すことで解消した。旧ファームの保存設定（ZMK 3系時代の設定など）が残っていたのが原因とみられる。キーマップ側の対策（hold-preferred化・レイヤー2/8への追加）は不要だったため取り除いた。**ZMKのバージョンやDYA Studioモジュールを入れ替えたときは、`settings_reset` を挟んで書き直すこと。**
