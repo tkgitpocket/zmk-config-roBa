@@ -107,3 +107,9 @@ DYA Studioでランタイム定義できるため、`combos { ... }` ノード�
 ## 9. studio_unlockが効かない問題の結論
 
 レイヤー6の `&studio_unlock` が効かない（Ctrl+Zになる）問題は、`settings_reset` ファームを両側に書いてから通常ファームを書き直すことで解消した。旧ファームの保存設定（ZMK 3系時代の設定など）が残っていたのが原因とみられる。キーマップ側の対策（hold-preferred化・レイヤー2/8への追加）は不要だったため取り除いた。**ZMKのバージョンやDYA Studioモジュールを入れ替えたときは、`settings_reset` を挟んで書き直すこと。**
+
+## 10. エンコーダーのランタイム編集（zmk-behavior-runtime-sensor-rotate）
+
+- `config/west.yml`: `cormoran/zmk-behavior-runtime-sensor-rotate`（`feat/custom-settings-storage` ブランチ。dya-dashと同じ）を追加。
+- `roBa_R.conf`: `ZMK_RUNTIME_SENSOR_ROTATE=y` / `ZMK_RUNTIME_SENSOR_ROTATE_STUDIO_RPC=y`。エンコーダーは左側だが、キーマップ処理はcentral（右）で行うため右側のみ設定。
+- `roBa.keymap`: `scroll_up_down` を `zmk,behavior-runtime-sensor-rotate` に変更（既定値は従来どおり cw=`SCRL_DOWN` / ccw=`SCRL_UP`、`tap-ms=20`）。各レイヤーの `sensor-bindings` は変更なし。DYA Studioでレイヤー別に上書きでき、未設定の間は従来のスクロール動作。
